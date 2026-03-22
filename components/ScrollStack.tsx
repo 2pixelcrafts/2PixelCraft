@@ -1,6 +1,6 @@
 'use client';
 
-import { useLayoutEffect, useRef, useCallback, ReactNode } from 'react';
+import { useLayoutEffect, useRef, useCallback, type CSSProperties, ReactNode } from 'react';
 import Lenis from 'lenis';
 import './ScrollStack.css';
 
@@ -51,7 +51,6 @@ const ScrollStack = ({
   const cardsRef = useRef<HTMLElement[]>([]);
   const cardTopsRef = useRef<number[]>([]);
   const endElementTopRef = useRef(0);
-  const stackStartTopRef = useRef(0);
   const lastTransformsRef = useRef(new Map());
   const isUpdatingRef = useRef(false);
 
@@ -105,7 +104,6 @@ const ScrollStack = ({
     const endElement = scroller.querySelector('.scroll-stack-end') as HTMLElement | null;
 
     cardsRef.current = cards;
-    stackStartTopRef.current = getElementOffset(scroller);
     cardTopsRef.current = cards.map((card) => getElementOffset(card));
     endElementTopRef.current = endElement ? getElementOffset(endElement) : 0;
   }, [getElementOffset]);
@@ -124,10 +122,9 @@ const ScrollStack = ({
       if (!card) return;
 
       const cardTop = cardTopsRef.current[i] ?? getElementOffset(card);
-      const leadCardTop = i === 0 ? stackStartTopRef.current : cardTop;
-      const triggerStart = leadCardTop - stackPositionPx - itemStackDistance * i;
+      const triggerStart = cardTop - stackPositionPx - itemStackDistance * i;
       const triggerEnd = cardTop - scaleEndPositionPx;
-      const pinStart = leadCardTop - stackPositionPx - itemStackDistance * i;
+      const pinStart = cardTop - stackPositionPx - itemStackDistance * i;
       const pinEnd = Math.max(pinStart, endElementTop - containerHeight / 2);
 
       const scaleProgress = calculateProgress(scrollTop, triggerStart, triggerEnd);
@@ -318,7 +315,6 @@ const ScrollStack = ({
       cardsRef.current = [];
       cardTopsRef.current = [];
       endElementTopRef.current = 0;
-      stackStartTopRef.current = 0;
       transformsCache.clear();
       isUpdatingRef.current = false;
     };
@@ -340,7 +336,16 @@ const ScrollStack = ({
   ]);
 
   return (
-    <div className={`scroll-stack-scroller ${className}`.trim()} ref={scrollerRef}>
+    <div
+      className={`scroll-stack-scroller ${className}`.trim()}
+      ref={scrollerRef}
+      style={
+        {
+          '--scroll-stack-top-padding':
+            typeof stackPosition === 'number' ? `${stackPosition}px` : stackPosition,
+        } as CSSProperties
+      }
+    >
       <div className="scroll-stack-inner">
         {children}
         <div className="scroll-stack-end" />
