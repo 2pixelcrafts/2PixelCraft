@@ -66,9 +66,8 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="bg-white py-20 px-6 lg:px-10">
-      <div className="max-w-5xl mx-auto">
-        {/* Title */}
-        <h2 className="text-center font-unbounded font-bold text-4xl sm:text-5xl text-black mb-16">
+      <div className="max-w-5xl mx-auto mb-16">
+        <h2 className="text-center font-unbounded font-bold text-4xl sm:text-5xl text-black">
           Featured{" "}
           <span className="bg-orange-500 text-white px-3 py-1 rounded">
             Projects
@@ -76,21 +75,17 @@ export default function Projects() {
         </h2>
       </div>
 
-      {/* ScrollStack */}
       <div className="max-w-5xl mx-auto">
         <ScrollStack
-          useWindowScroll={true}
-          itemDistance={150}
-          itemScale={0.05}
-          itemStackDistance={30}
-          stackPosition="15%"
-          scaleEndPosition="5%"
-          baseScale={0.88}
+          itemDistance={320}
+          topOffset={80}
+          stackGap={18}
+          scaleStep={0.05}
         >
           {projects.map((project) => (
             <ScrollStackItem
               key={project.name}
-              itemClassName={`${project.cardBg} border border-gray-200 !rounded-2xl !h-auto`}
+              itemClassName={`${project.cardBg} border border-gray-200 rounded-2xl shadow-md`}
             >
               <div className="p-8 md:p-10">
                 <h3 className="font-unbounded font-bold text-3xl sm:text-4xl text-black mb-3">

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const months = [
   "January","February","March","April","May","June",
@@ -39,10 +39,13 @@ function CalendarWidget() {
   const cells = [...Array(firstDay).fill(null), ...Array.from({ length: daysInMonth }, (_, i) => i + 1)];
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 text-black">
+    <div className="bg-white rounded-2xl shadow-xl shadow-black/10 p-6 text-black">
       {/* Month nav */}
       <div className="flex items-center justify-between mb-4">
-        <button onClick={prev} className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
+        <button
+          onClick={prev}
+          className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+        >
           <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -50,19 +53,26 @@ function CalendarWidget() {
         <p className="text-sm font-semibold text-gray-800 font-poppins">
           {months[month]} {year}
         </p>
-        <button onClick={next} className="w-7 h-7 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition-colors">
+        <button
+          onClick={next}
+          className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition-colors"
+        >
           <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
       </div>
 
-      <p className="text-xs font-semibold text-gray-500 font-poppins mb-3">Select a Day</p>
+      <p className="text-xs font-semibold text-gray-400 font-poppins mb-3 tracking-wider uppercase">
+        Select a Day
+      </p>
 
       {/* Day headers */}
       <div className="grid grid-cols-7 mb-2">
         {DAYS.map(d => (
-          <div key={d} className="text-center text-[10px] font-bold text-gray-400 font-poppins py-1">{d}</div>
+          <div key={d} className="text-center text-[10px] font-bold text-gray-400 font-poppins py-1">
+            {d}
+          </div>
         ))}
       </div>
 
@@ -73,10 +83,10 @@ function CalendarWidget() {
             {day ? (
               <button
                 onClick={() => setSelected(day)}
-                className={`w-8 h-8 rounded-full text-xs font-poppins font-medium transition-colors
+                className={`w-8 h-8 rounded-full text-xs font-poppins font-medium transition-all duration-150
                   ${selected === day
-                    ? "bg-blue-600 text-white"
-                    : "text-gray-700 hover:bg-gray-100"
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/30 scale-110"
+                    : "text-gray-700 hover:bg-blue-50 hover:text-blue-700"
                   }`}
               >
                 {day}
@@ -85,18 +95,51 @@ function CalendarWidget() {
           </div>
         ))}
       </div>
+
+      {/* Book button */}
+      <button
+        disabled={!selected}
+        className={`mt-5 w-full py-2.5 rounded-xl text-sm font-semibold font-poppins transition-all duration-200
+          ${selected
+            ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40"
+            : "bg-gray-100 text-gray-400 cursor-not-allowed"
+          }`}
+      >
+        {selected ? `Book for ${months[month]} ${selected}` : "Select a date to book"}
+      </button>
     </div>
   );
 }
 
 export default function NobrainerOffer() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const targets = el.querySelectorAll<HTMLElement>(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="offer" className="bg-white py-20 px-6 lg:px-10">
+    <section id="offer" ref={ref} className="bg-white py-20 px-6 lg:px-10">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
+            <div className="reveal flex items-center gap-3 mb-8">
               <span className="bg-orange-500 text-white font-unbounded font-bold text-lg px-3 py-1 rounded">
                 Simple offer
               </span>
@@ -105,46 +148,49 @@ export default function NobrainerOffer() {
               </span>
             </div>
 
-            <p className="font-poppins text-gray-800 text-lg leading-relaxed mb-4">
+            <p className="reveal stagger-1 font-poppins text-gray-800 text-lg leading-relaxed mb-4">
               Start with a 2-week paid trial where we:
             </p>
 
-            <ul className="space-y-3 mb-8 font-poppins text-gray-700 text-base">
+            <ul className="reveal stagger-2 space-y-3 mb-8 font-poppins text-gray-700 text-base">
               {["Build your MVP", "Solve a specific problem", "Tackle a module of your existing project"].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-700 flex-shrink-0" />
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
                   {item}
                 </li>
               ))}
             </ul>
 
-            <p className="font-poppins text-black text-base">
+            <p className="reveal stagger-3 font-poppins text-black text-base">
               <strong>No guesswork.</strong> See for yourself if we&apos;re the right fit.
             </p>
 
-            <div className="mt-8 border-t border-gray-200 pt-6 space-y-2">
+            <div className="reveal stagger-4 mt-8 border-t border-gray-200 pt-6 space-y-2">
               <div className="flex items-center gap-3 text-sm text-gray-500 font-poppins">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6l4 2" />
                 </svg>
                 30 min
               </div>
               <div className="flex items-center gap-3 text-sm text-gray-500 font-poppins">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <rect x="2" y="3" width="20" height="14" rx="2" strokeWidth={1.5} />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 21h8M12 17v4" />
                 </svg>
                 Video call link provided after booking
               </div>
               <p className="text-sm text-gray-500 font-poppins">
-                <a href="#" className="underline">7 out of 10 clients</a> who start with us stay for more than a year.
+                <a href="#" className="underline underline-offset-2 hover:text-gray-800 transition-colors">
+                  7 out of 10 clients
+                </a>{" "}
+                who start with us stay for more than a year.
               </p>
             </div>
           </div>
 
           {/* Right — Calendar */}
-          <div>
+          <div className="reveal stagger-2">
             <CalendarWidget />
           </div>
         </div>
