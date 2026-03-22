@@ -9,7 +9,6 @@
   scroll-behavior: smooth;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  will-change: scroll-position;
 }
 
 .scroll-stack-inner {
@@ -23,7 +22,7 @@
 
 .scroll-stack-card {
   transform-origin: top center;
-  will-change: transform, filter;
+  will-change: transform;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
