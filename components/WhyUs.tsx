@@ -1,39 +1,39 @@
 const points = [
   {
     icon: "💬",
-    title: "Talk Directly to Our Team",
+    title: "Talk Directly to Us",
     description:
-      "No project managers in between. You speak directly with the people building your product — from the very first call.",
+      "No middlemen. No runaround. You talk straight to the people doing the actual work — from day one.",
   },
   {
     icon: "🔓",
-    title: "No Long-Term Lock-Ins",
+    title: "No Long Contracts",
     description:
-      "Start with a simple 2-week paid trial. No contracts, no minimums. Stay because you love the work, not because you're stuck.",
+      "Start with a simple 2-week trial. No big commitments, no fine print. You stay because you're happy, not because you're locked in.",
   },
   {
     icon: "✅",
-    title: "Honest, Upfront Advice",
+    title: "We Tell You the Truth",
     description:
-      "If we think custom software isn't what you need right now, we'll tell you. Your success matters more than a sale.",
+      "If you don't really need a website or app right now, we'll say so. We'd rather help you make the right call than take your money.",
   },
   {
     icon: "🚀",
-    title: "Focused on Delivery",
+    title: "We Get Things Done",
     description:
-      "Our team is incentivized to complete your project — not drag it out. We move fast and ship real things.",
+      "We don't drag projects out. We move quickly, keep you in the loop, and actually deliver what we promised.",
   },
   {
     icon: "🤝",
-    title: "Your Involvement Matters",
+    title: "You're Always in the Loop",
     description:
-      "We believe great products are built together. Your feedback and decisions are always part of the process.",
+      "Your input matters at every step. We check in with you regularly so there are no surprises at the end.",
   },
   {
     icon: "💡",
-    title: "No Dreamy Promises",
+    title: "No Empty Promises",
     description:
-      "We set realistic expectations and deliver on them. What you see in the trial is what you get throughout.",
+      "We only promise what we can deliver. You'll know exactly what to expect — and we'll meet that expectation every time.",
   },
 ];
 
@@ -47,10 +47,10 @@ export default function WhyUs() {
             Why Choose Us
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Simple, Honest, and Built for Your Success
+            Simple, Honest, and Here to Help You Grow
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            We work differently from most agencies — and our clients notice it right away.
+            We're not a big faceless company. We're a small team that genuinely cares — and our clients feel that from the very first call.
           </p>
         </div>
 

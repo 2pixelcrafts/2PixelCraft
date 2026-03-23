@@ -6,7 +6,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="relative bg-[#c96400] overflow-hidden">
+    <section className="relative bg-[#1d4ed8] overflow-hidden">
       <div className="absolute top-0 left-0 right-0">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
           <ellipse cx="720" cy="-60" rx="900" ry="160" fill="white" />
@@ -15,8 +15,8 @@ export default function StatsSection() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 pt-24 pb-16">
         <h2 className="font-unbounded font-bold text-white text-4xl sm:text-5xl lg:text-6xl leading-tight mb-16">
-          We are a passionate team,{" "}
-          <span className="text-[#0f0f0f]">growing fast</span>
+          A small team that{" "}
+          <span className="text-[#0f0f0f]">genuinely cares</span>
         </h2>
 
         <div className="grid grid-cols-3 gap-8 border-t border-white/20 pt-8">
@@ -39,7 +39,7 @@ export default function StatsSection() {
         </div>
       </div>
 
-      <div className="h-16 bg-gradient-to-b from-[#c96400] to-[#0f0f0f]" />
+      <div className="h-16 bg-gradient-to-b from-[#1d4ed8] to-[#0f0f0f]" />
     </section>
   );
 }

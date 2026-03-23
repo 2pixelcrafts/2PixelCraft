@@ -11,7 +11,7 @@ export default function Hero() {
       />
 
       {/* Orange radial glow — breathing */}
-      <div className="glow-breathe absolute bottom-0 left-1/2 w-175 h-105 rounded-full bg-orange-600/20 blur-[110px] pointer-events-none" />
+      <div className="glow-breathe absolute bottom-0 left-1/2 w-175 h-105 rounded-full bg-blue-600/20 blur-[110px] pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
@@ -20,14 +20,13 @@ export default function Hero() {
         <div className="hero-rise hero-delay-1 inline-flex items-center gap-2.5 bg-white/6 border border-white/10 rounded-full px-4 py-1.5 mb-8">
           <span className="dot-blink w-2 h-2 rounded-full bg-green-400 shrink-0" />
           <span className="font-poppins text-gray-300 text-sm">
-            Available for new projects
+            Now taking on new clients
           </span>
         </div>
 
         {/* Headline */}
         <h1 className="hero-rise hero-delay-2 font-unbounded font-bold text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.15] tracking-tight">
-          We partner with founders &amp; businesses to build great software, on
-          time and on budget
+          We build websites &amp; apps for local businesses — done right, on time, and within budget
         </h1>
 
         {/* Orange hand-drawn underline — draws in */}
@@ -42,7 +41,7 @@ export default function Hero() {
             <path
               className="draw-line"
               d="M4 13 C 40 5, 100 3, 170 9 C 240 15, 300 6, 336 5"
-              stroke="#f97316"
+              stroke="#3b82f6"
               strokeWidth="3.5"
               strokeLinecap="round"
               fill="none"
@@ -50,7 +49,7 @@ export default function Hero() {
             <path
               className="draw-line-2"
               d="M10 16 C 50 10, 110 8, 170 13 C 230 18, 290 10, 332 9"
-              stroke="#f97316"
+              stroke="#3b82f6"
               strokeWidth="2"
               strokeLinecap="round"
               fill="none"
@@ -63,7 +62,7 @@ export default function Hero() {
         <div className="hero-rise hero-delay-4 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#offer"
-            className="bg-orange-500 hover:bg-orange-400 text-white font-semibold font-poppins px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-orange-500/30 active:scale-95"
+            className="bg-blue-500 hover:bg-blue-400 text-white font-semibold font-poppins px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/30 active:scale-95"
           >
             Book a Free Call
           </a>
@@ -76,7 +75,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Curved orange bottom divider */}
+      {/* Curved blue bottom divider */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg
           viewBox="0 0 1440 120"
@@ -84,7 +83,7 @@ export default function Hero() {
           xmlns="http://www.w3.org/2000/svg"
           className="w-full"
         >
-          <ellipse cx="720" cy="200" rx="900" ry="200" fill="#c96400" />
+          <ellipse cx="720" cy="200" rx="900" ry="200" fill="#1d4ed8" />
         </svg>
       </div>
     </section>

@@ -8,8 +8,8 @@ const projects = [
     description: (
       <>
         Founded in 2007 and valued at{" "}
-        <span className="text-orange-500">$1 billion</span>, Property Finder is{" "}
-        <span className="text-orange-500">UAE&apos;s #1 property portal</span> with 100k+
+        <span className="text-blue-500">$1 billion</span>, Property Finder is{" "}
+        <span className="text-blue-500">UAE&apos;s #1 property portal</span> with 100k+
         verified properties.
       </>
     ),
@@ -24,7 +24,7 @@ const projects = [
     description: (
       <>
         The official{" "}
-        <span className="text-orange-500">broadcasting platform</span> for the North
+        <span className="text-blue-500">broadcasting platform</span> for the North
         American Hockey League, with over 50k paid subscribers.
       </>
     ),
@@ -38,7 +38,7 @@ const projects = [
     name: "Maestro",
     description: (
       <>
-        <span className="text-orange-500">Raised $15 million</span> in 2021, Maestro
+        <span className="text-blue-500">Raised $15 million</span> in 2021, Maestro
         helps creators make money on live streams with powerful interactive tools.
       </>
     ),
@@ -53,7 +53,7 @@ const projects = [
     description: (
       <>
         Cow{" "}
-        <span className="text-orange-500">management software</span> with over 100k+
+        <span className="text-blue-500">management software</span> with over 100k+
         cows registered and backed by the Government of India.
       </>
     ),
@@ -136,7 +136,7 @@ export default function Projects() {
         {/* Title */}
         <h2 className="text-center font-unbounded font-bold text-4xl sm:text-5xl text-black mb-16">
           Featured{" "}
-          <span className="bg-orange-500 text-white px-3 py-1 rounded">
+          <span className="bg-blue-500 text-white px-3 py-1 rounded">
             Projects
           </span>
         </h2>

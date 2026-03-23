@@ -37,7 +37,7 @@ export default function Navbar() {
               </span>
               <span className="inline-grid grid-cols-3 gap-0.5 mx-0.5 transition-transform duration-500 group-hover:rotate-90">
                 {[...Array(9)].map((_, i) => (
-                  <span key={i} className="w-1 h-1 bg-orange-500 rounded-[1px]" />
+                  <span key={i} className="w-1 h-1 bg-blue-500 rounded-[1px]" />
                 ))}
               </span>
               <span className="font-unbounded font-bold text-white text-sm tracking-widest uppercase">
@@ -58,12 +58,12 @@ export default function Navbar() {
                 className="relative text-gray-400 hover:text-white text-sm font-poppins transition-colors duration-200 group"
               >
                 {l.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-orange-500 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
             <a
               href="#offer"
-              className="bg-orange-500 hover:bg-orange-400 text-white text-sm font-semibold font-poppins px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-orange-500/30 active:scale-95"
+              className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold font-poppins px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
             >
               Book a Call
             </a>
@@ -116,7 +116,7 @@ export default function Navbar() {
           <a
             href="#offer"
             onClick={() => setOpen(false)}
-            className="bg-orange-500 hover:bg-orange-400 text-white text-sm font-semibold font-poppins px-5 py-2.5 rounded-full text-center transition-colors duration-200"
+            className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold font-poppins px-5 py-2.5 rounded-full text-center transition-colors duration-200"
           >
             Book a Call
           </a>

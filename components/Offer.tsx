@@ -1,8 +1,8 @@
 const trialItems = [
-  "Build your MVP from scratch",
-  "Solve a specific technical problem",
-  "Tackle a module of your existing project",
-  "Review and improve your current codebase",
+  "Build your new website or app from scratch",
+  "Fix a specific problem you're stuck on",
+  "Add a new feature to what you already have",
+  "Review and improve what&apos;s already built",
 ];
 
 export default function Offer() {
@@ -21,18 +21,18 @@ export default function Offer() {
                 Our No-Brainer Offer
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
-                Start with a 2-Week Paid Trial — Zero Risk
+                Try Us Free for 2 Weeks — No Risk at All
               </h2>
               <p className="text-blue-100 text-lg leading-relaxed mb-8">
-                Not sure if we&apos;re the right fit? That&apos;s completely fine. Try us for
-                two weeks and see the results for yourself — before committing to
-                anything more.
+                Not sure if we&apos;re the right people for the job? That&apos;s completely fine.
+                See our work first for two weeks — then decide if you want to continue.
+                No pressure, no commitment.
               </p>
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors"
               >
-                Book a Free Discovery Call
+                Book a Free Chat
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -58,7 +58,7 @@ export default function Offer() {
               </ul>
               <div className="mt-6 pt-6 border-t border-white/20">
                 <p className="text-blue-200 text-sm">
-                  No guesswork. No long proposals. Just real work — and you decide if we&apos;re right for each other.
+                  No guesswork. No long proposals. Just real work — and you decide if we&apos;re a good fit.
                 </p>
               </div>
             </div>

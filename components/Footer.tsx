@@ -33,7 +33,7 @@ export default function Footer() {
                 key={label}
                 href="#"
                 aria-label={label}
-                className="w-9 h-9 bg-white/8 hover:bg-orange-500 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 group"
+                className="w-9 h-9 bg-white/8 hover:bg-blue-500 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 group"
               >
                 <svg
                   className="w-4 h-4 text-white/60 group-hover:text-white transition-colors duration-200"
@@ -56,7 +56,7 @@ export default function Footer() {
               </span>
               <span className="inline-grid grid-cols-3 gap-0.5 mx-0.5 transition-transform duration-500 group-hover:rotate-90">
                 {[...Array(9)].map((_, i) => (
-                  <span key={i} className="w-1 h-1 bg-orange-500 rounded-[1px]" />
+                  <span key={i} className="w-1 h-1 bg-blue-500 rounded-[1px]" />
                 ))}
               </span>
               <span className="font-unbounded font-bold text-white text-sm tracking-widest uppercase">
@@ -74,7 +74,7 @@ export default function Footer() {
                 className="relative text-gray-400 hover:text-white text-sm font-poppins transition-colors duration-200 group"
               >
                 {l.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-orange-500 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>

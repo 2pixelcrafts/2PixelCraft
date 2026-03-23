@@ -5,9 +5,9 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: "MVP Development",
+    title: "New Website or App",
     description:
-      "Got an idea? We'll build your minimum viable product and get it in front of real users — fast and focused.",
+      "Have an idea? We'll build it step by step and get it up and running quickly — without wasting your time or money.",
   },
   {
     icon: (
@@ -15,9 +15,9 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
-    title: "Custom Software",
+    title: "Custom Tools for Your Business",
     description:
-      "From web apps to mobile platforms — we build clean, scalable software tailored exactly to your business needs.",
+      "Need something specific? We build tools that fit exactly how YOUR business works — no generic, one-size-fits-all solutions.",
   },
   {
     icon: (
@@ -25,9 +25,9 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Team Extension",
+    title: "Extra Tech Help When You Need It",
     description:
-      "Need to move faster? We plug right into your team and deliver results without the long onboarding process.",
+      "Already working with someone but need more hands? We jump in right away and get things moving — no long setup needed.",
   },
   {
     icon: (
@@ -35,9 +35,9 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
       </svg>
     ),
-    title: "UI/UX Design",
+    title: "Clean, Easy-to-Use Design",
     description:
-      "Clean, intuitive interfaces that your users will actually enjoy. Design and development in one place.",
+      "We make sure your website or app looks great AND is easy for your customers to use. Good design means more customers.",
   },
   {
     icon: (
@@ -45,9 +45,9 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
     ),
-    title: "Cloud & Infrastructure",
+    title: "Fast & Always Online",
     description:
-      "Reliable, scalable cloud setups on AWS and Azure — so your product stays fast and available as you grow.",
+      "We make sure your website loads fast and never goes down — even when lots of people visit at the same time.",
   },
   {
     icon: (
@@ -55,9 +55,9 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    title: "Ongoing Support",
+    title: "We Stay With You",
     description:
-      "We don't disappear after launch. We stay with you to maintain, improve, and scale your product over time.",
+      "We don't disappear after your site is live. We're here to fix problems, make updates, and help your business keep growing.",
   },
 ];
 
@@ -71,11 +71,11 @@ export default function Services() {
             What We Do
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Services Designed Around Your Goals
+            We Handle the Tech. You Run Your Business.
           </h2>
           <p className="text-slate-500 text-lg max-w-xl mx-auto">
-            Whether you&apos;re starting from scratch or scaling up, we have the
-            expertise to help you move forward with confidence.
+            Whether you need a new website, a mobile app, or a tool to save you
+            hours of work — we make it simple and stress-free.
           </p>
         </div>
 

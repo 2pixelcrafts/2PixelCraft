@@ -9,11 +9,11 @@ export default function Contact() {
               Get In Touch
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-              Let&apos;s Talk About Your Project
+              Let&apos;s Have a Quick Chat
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed mb-8">
-              Have a project in mind or just want to explore what&apos;s possible?
-              Send us a message and we&apos;ll get back to you within one business day.
+              Not sure where to start? That&apos;s totally okay. Just drop us a message
+              and we&apos;ll get back to you within one business day — no pressure, no jargon.
             </p>
 
             <div className="space-y-5">

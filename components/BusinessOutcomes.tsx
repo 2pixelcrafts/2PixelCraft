@@ -29,8 +29,8 @@ export default function BusinessOutcomes() {
         <div className="reveal border border-white/10 rounded-3xl p-10 sm:p-14 text-center transition-all duration-500 hover:border-white/20">
           {/* Title */}
           <h2 className="font-unbounded font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4 leading-tight">
-            Business outcomes{" "}
-            <span className="text-white font-black">&gt;</span> Code
+            Your growth{" "}
+            <span className="text-white font-black">&gt;</span> fancy tech
           </h2>
 
           {/* Orange underline */}
@@ -39,7 +39,7 @@ export default function BusinessOutcomes() {
               <path
                 className="draw-line"
                 d="M4 8 C 50 3, 130 3, 256 7"
-                stroke="#f97316"
+                stroke="#3b82f6"
                 strokeWidth="3"
                 strokeLinecap="round"
                 fill="none"
@@ -49,13 +49,13 @@ export default function BusinessOutcomes() {
 
           {/* Body */}
           <p className="font-poppins text-gray-400 text-lg sm:text-xl leading-relaxed mb-5 max-w-2xl mx-auto">
-            We focus on what actually moves your business forward. If you don&apos;t
-            need custom software, we&apos;ll tell you honestly —{" "}
-            <span className="text-white font-medium">no hard sells.</span>
+            We care about one thing — helping your business grow. If you don&apos;t
+            actually need a website or app right now, we&apos;ll be straight with you —{" "}
+            <span className="text-white font-medium">no pressure, no hard selling.</span>
           </p>
 
           <p className="font-poppins text-gray-600 text-base">
-            And yes, we&apos;ve actually told this to a few clients already.
+            Honestly, we&apos;ve already said this to a few clients. And they thanked us for it.
           </p>
         </div>
       </div>

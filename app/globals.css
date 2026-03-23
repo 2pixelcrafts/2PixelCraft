@@ -5,6 +5,17 @@
   --font-unbounded: var(--font-unbounded);
 }
 
+/* ── Brand color palette ────────────────────────────────────
+   Primary:        #3b82f6  (blue-500)
+   Primary hover:  #60a5fa  (blue-400)
+   Primary dark:   #2563eb  (blue-600)
+   Section bg:     #1d4ed8  (blue-700) — used for large coloured sections
+   SVG / accents:  #3b82f6  (blue-500)
+   ─────────────────────────────────────────────────────────── */
+:root {
+  --brand-section: #1d4ed8;
+}
+
 html {
   scroll-behavior: smooth;
 }
