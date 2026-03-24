@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const testimonials = [
   {
@@ -7,7 +9,8 @@ const testimonials = [
       "The execution was fast, communication was very good and overall it's easy to work with you guys",
     name: "Tuomas Lehtovirta",
     role: "CEO at Nordic Gulf Partners",
-    style: "top-[5%] left-[2%] rotate-[-4deg]",
+    side: "left",
+    style: "top-[5%] left-[15%] rotate-[-4deg]",
     stars: 5,
   },
   {
@@ -15,14 +18,16 @@ const testimonials = [
       "I read the approach about Athena to retrieve data from SES and it's amazingly explained.",
     name: "Bill Palter",
     role: "Senior Software Engineer",
-    style: "top-[5%] right-[3%] rotate-[3deg]",
+    side: "right",
+    style: "top-[5%] right-[15%] rotate-[3deg]",
     stars: 5,
   },
   {
     quote: "As soon we had the call my mind was going crazy with ideas",
     name: "Harry Latos",
     role: "Founder of Acquired",
-    style: "top-[38%] left-[1%] rotate-[2deg]",
+    side: "left",
+    style: "top-[38%] left-[13%] rotate-[2deg]",
     stars: 5,
   },
   {
@@ -30,7 +35,8 @@ const testimonials = [
       "I was in urgent need and the module was delivered within 2 hours, exceptional quality of work.",
     name: "Michael Cole",
     role: "Client",
-    style: "top-[35%] right-[1%] rotate-[-3deg]",
+    side: "right",
+    style: "top-[35%] right-[13%] rotate-[-3deg]",
     stars: 5,
   },
   {
@@ -38,7 +44,8 @@ const testimonials = [
       "Sometimes you need a reality check, and you gave it solidly — harsh but necessary",
     name: "Shachi Mall",
     role: "100k+ Subscribers",
-    style: "bottom-[8%] left-[5%] rotate-[3deg]",
+    side: "left",
+    style: "bottom-[8%] left-[16%] rotate-[3deg]",
     stars: 5,
   },
   {
@@ -46,10 +53,13 @@ const testimonials = [
       "Wow! you guys are moving so fast that we're behind testing/deploy. Crazy stuff",
     name: "Marc Ruskin",
     role: "Project Manager, NAHL",
-    style: "bottom-[5%] right-[4%] rotate-[-2deg]",
+    side: "right",
+    style: "bottom-[5%] right-[16%] rotate-[-2deg]",
     stars: 5,
   },
-];
+] as const;
+
+type Testimonial = (typeof testimonials)[number];
 
 function Stars({ count }: { count: number }) {
   return (
@@ -67,7 +77,7 @@ function TestimonialCard({
   t,
   className,
 }: {
-  t: (typeof testimonials)[0];
+  t: Testimonial;
   className?: string;
 }) {
   return (
@@ -92,6 +102,9 @@ export default function Testimonials() {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
     const targets = el.querySelectorAll<HTMLElement>(".reveal");
     const observer = new IntersectionObserver(
       (entries) => {
@@ -105,7 +118,155 @@ export default function Testimonials() {
       { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
     targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
+      const leftCards = Array.from(
+        el.querySelectorAll<HTMLElement>('[data-testimonial-side="left"]')
+      );
+      const rightCards = Array.from(
+        el.querySelectorAll<HTMLElement>('[data-testimonial-side="right"]')
+      );
+      const cards = [...leftCards, ...rightCards];
+
+      if (!cards.length) return;
+
+      gsap.set(cards, { willChange: "transform" });
+
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      timeline
+        .to(leftCards, { x: -140, ease: "none" }, 0)
+        .to(rightCards, { x: 140, ease: "none" }, 0);
+
+      return () => {
+        timeline.kill();
+        gsap.set(cards, { clearProps: "transform,willChange" });
+      };
+    });
+
+    mm.add("(max-width: 1023px) and (prefers-reduced-motion: no-preference)", () => {
+      const viewport = el.querySelector<HTMLElement>("[data-mobile-testimonials-viewport]");
+      const track = el.querySelector<HTMLElement>("[data-mobile-testimonials-track]");
+      if (!viewport || !track) return;
+
+      gsap.set(track, { willChange: "transform" });
+      const setX = gsap.quickSetter(track, "x", "px");
+      const clampVelocity = gsap.utils.clamp(-220, 220);
+      let loopWidth = 0;
+      let x = 0;
+      let velocity = -45;
+      let previousVelocity = velocity;
+      let frameId = 0;
+      let lastFrameTime = performance.now();
+      let pointerId: number | null = null;
+      let lastPointerX = 0;
+      let lastMoveTime = 0;
+      let dragVelocity = 0;
+      let movedDuringDrag = false;
+
+      const wrapX = (value: number) => {
+        if (!loopWidth) return value;
+        return gsap.utils.wrap(-loopWidth, 0, value);
+      };
+
+      const render = () => {
+        setX(x);
+      };
+
+      const updateLoopWidth = () => {
+        loopWidth = track.scrollWidth / 2;
+        x = wrapX(x);
+        render();
+      };
+
+      const tick = (now: number) => {
+        const delta = Math.min((now - lastFrameTime) / 1000, 0.05);
+        lastFrameTime = now;
+
+        if (pointerId === null) {
+          x = wrapX(x + velocity * delta);
+          render();
+        }
+
+        frameId = window.requestAnimationFrame(tick);
+      };
+
+      const onPointerDown = (event: PointerEvent) => {
+        if (event.pointerType === "mouse" && event.button !== 0) return;
+
+        pointerId = event.pointerId;
+        previousVelocity = velocity;
+        dragVelocity = 0;
+        movedDuringDrag = false;
+        lastPointerX = event.clientX;
+        lastMoveTime = performance.now();
+        velocity = 0;
+        viewport.setPointerCapture(event.pointerId);
+      };
+
+      const onPointerMove = (event: PointerEvent) => {
+        if (pointerId !== event.pointerId) return;
+
+        const deltaX = event.clientX - lastPointerX;
+        if (deltaX !== 0) {
+          movedDuringDrag = true;
+        }
+
+        x = wrapX(x + deltaX);
+        render();
+
+        const now = performance.now();
+        const deltaTime = Math.max((now - lastMoveTime) / 1000, 0.016);
+        dragVelocity = clampVelocity(deltaX / deltaTime);
+        lastPointerX = event.clientX;
+        lastMoveTime = now;
+      };
+
+      const endDrag = (event: PointerEvent) => {
+        if (pointerId !== event.pointerId) return;
+
+        if (viewport.hasPointerCapture(event.pointerId)) {
+          viewport.releasePointerCapture(event.pointerId);
+        }
+
+        pointerId = null;
+        velocity = movedDuringDrag && Math.abs(dragVelocity) > 5 ? dragVelocity : previousVelocity;
+      };
+
+      const resizeObserver = new ResizeObserver(updateLoopWidth);
+      resizeObserver.observe(track);
+      updateLoopWidth();
+      frameId = window.requestAnimationFrame(tick);
+
+      viewport.addEventListener("pointerdown", onPointerDown);
+      viewport.addEventListener("pointermove", onPointerMove);
+      viewport.addEventListener("pointerup", endDrag);
+      viewport.addEventListener("pointercancel", endDrag);
+
+      return () => {
+        window.cancelAnimationFrame(frameId);
+        resizeObserver.disconnect();
+        viewport.removeEventListener("pointerdown", onPointerDown);
+        viewport.removeEventListener("pointermove", onPointerMove);
+        viewport.removeEventListener("pointerup", endDrag);
+        viewport.removeEventListener("pointercancel", endDrag);
+        gsap.set(track, { clearProps: "transform,willChange" });
+      };
+    });
+
+    return () => {
+      observer.disconnect();
+      mm.revert();
+    };
   }, []);
 
   return (
@@ -130,23 +291,33 @@ export default function Testimonials() {
       {/* Scattered cards — hidden on mobile, shown on lg */}
       <div className="hidden lg:block absolute inset-0">
         {testimonials.map((t, i) => (
-          <TestimonialCard
+          <div
             key={i}
-            t={t}
+            data-testimonial-side={t.side}
             className={`absolute w-65 ${t.style}`}
-          />
+          >
+            <TestimonialCard t={t} />
+          </div>
         ))}
       </div>
 
-      {/* Mobile: horizontal scroll cards */}
-      <div className="lg:hidden flex gap-4 overflow-x-auto px-6 pb-10 snap-x snap-mandatory">
-        {testimonials.map((t, i) => (
-          <TestimonialCard
-            key={i}
-            t={t}
-            className="shrink-0 w-65 snap-start"
-          />
-        ))}
+      {/* Mobile: infinite slider */}
+      <div
+        data-mobile-testimonials-viewport
+        className="lg:hidden overflow-hidden px-6 pb-10 select-none touch-pan-y"
+      >
+        <div
+          data-mobile-testimonials-track
+          className="flex w-max gap-4"
+        >
+          {[...testimonials, ...testimonials].map((t, i) => (
+            <TestimonialCard
+              key={`${t.name}-${i}`}
+              t={t}
+              className="w-65 shrink-0"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
