@@ -20,7 +20,7 @@ export default function Home() {
         <BusinessOutcomes />
         <NobrainerOffer />
         <Projects />
-        <StatsSection />
+        {/* <StatsSection /> */}
         <GoodVsGreat />
       </main>
       <Footer />

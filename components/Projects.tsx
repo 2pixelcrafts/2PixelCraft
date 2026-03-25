@@ -134,7 +134,7 @@ export default function Projects() {
     <section id="projects" className="bg-white py-20 px-6 lg:px-10">
       <div className="max-w-5xl mx-auto">
         {/* Title */}
-        <h2 className="text-center font-unbounded font-bold text-4xl sm:text-5xl text-black mb-16">
+        <h2 className="text-center font-unbounded font-bold text-4xl sm:text-5xl text-black">
           Featured{" "}
           <span className="bg-blue-500 text-white px-3 py-1 rounded">
             Projects
@@ -148,7 +148,7 @@ export default function Projects() {
           itemDistance={150}
           itemScale={0.05}
           itemStackDistance={30}
-          stackPosition="15%"
+          stackPosition="10%"
           scaleEndPosition="5%"
           baseScale={0.88}
         >
