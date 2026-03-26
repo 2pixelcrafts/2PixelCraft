@@ -26,7 +26,6 @@ export default function Footer() {
     <footer className="bg-[#0f0f0f] border-t border-white/[0.07] px-6 lg:px-10 pt-10 pb-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
-          {/* Social icons */}
           <div className="flex items-center gap-3">
             {socials.map(({ label, path }) => (
               <a
@@ -48,11 +47,10 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Logo center */}
           <a href="#" className="flex flex-col items-center leading-tight group">
             <div className="flex items-center gap-1">
               <span className="font-unbounded font-bold text-white text-sm tracking-widest uppercase">
-                Tech
+                2Pixel
               </span>
               <span className="inline-grid grid-cols-3 gap-0.5 mx-0.5 transition-transform duration-500 group-hover:rotate-90">
                 {[...Array(9)].map((_, i) => (
@@ -60,39 +58,37 @@ export default function Footer() {
                 ))}
               </span>
               <span className="font-unbounded font-bold text-white text-sm tracking-widest uppercase">
-                Butler
+                Craft
               </span>
             </div>
           </a>
 
-          {/* Nav links right */}
           <nav className="flex items-center gap-5 flex-wrap justify-center">
-            {navLinks.map((l) => (
+            {navLinks.map((link) => (
               <a
-                key={l.label}
-                href={l.href}
+                key={link.label}
+                href={link.href}
                 className="relative text-gray-400 hover:text-white text-sm font-poppins transition-colors duration-200 group"
               >
-                {l.label}
+                {link.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-white/[0.07] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-600 text-sm font-poppins">
-            © TechieButler Limited {new Date().getFullYear()}. All rights reserved.
+            &copy; 2PixelCraft {new Date().getFullYear()}. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            {legalLinks.map((l) => (
+            {legalLinks.map((link) => (
               <a
-                key={l}
+                key={link}
                 href="#"
                 className="text-gray-600 hover:text-white text-sm font-poppins transition-colors duration-200"
               >
-                {l}
+                {link}
               </a>
             ))}
           </div>
