@@ -39,6 +39,7 @@ export default function Navbar() {
                   alt="Tech Butler"
                   fill
                   priority
+                  loading="eager"
                   sizes="(max-width: 639px) 290px, (max-width: 767px) 360px, 600px"
                   className="object-contain object-center md:object-left"
                 />

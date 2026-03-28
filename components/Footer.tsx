@@ -56,6 +56,7 @@ export default function Footer() {
                   src="/Untitled design (13).png"
                   alt="Tech Butler"
                   fill
+                  loading="eager"
                   sizes="(max-width: 639px) 280px, 420px"
                   className="object-contain object-center"
                 />
