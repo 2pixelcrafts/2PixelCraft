@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Unbounded, Poppins } from "next/font/google";
 import { siteConfig } from "@/app/seo";
-import PageLoader from "@/components/PageLoader";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const unbounded = Unbounded({
   subsets: ["latin"],
   variable: "--font-unbounded",
@@ -73,7 +72,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${unbounded.variable} ${poppins.variable}`}>
       <body className="bg-[#0f0f0f] text-white font-poppins antialiased">
-        <PageLoader />
         {children}
         <Analytics />
         <SpeedInsights />

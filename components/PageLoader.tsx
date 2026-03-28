@@ -3,7 +3,11 @@
 import { useState, useEffect } from "react"
 import PixelLoader from "@/components/PixelLoader"
 
-export default function   () {
+interface PageLoaderProps {
+  text?: string
+}
+
+export default function PageLoader({ text }: PageLoaderProps) {
   const [fading, setFading] = useState(false)
   const [gone,   setGone]   = useState(false)
 
@@ -23,7 +27,7 @@ export default function   () {
         pointerEvents: fading ? "none" : "auto",
       }}
     >
-      <PixelLoader />
+      <PixelLoader text={text} />
     </div>
   )
 }

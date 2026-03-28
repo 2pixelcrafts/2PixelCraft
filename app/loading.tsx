@@ -1,5 +1,5 @@
-import PixelLoader from "@/components/PixelLoader"
+import PixelLoader from "@/components/PixelLoader";
 
 export default function Loading() {
-  return <PixelLoader />
+  return <PixelLoader text="crafting your experience..." variant="page" />;
 }
