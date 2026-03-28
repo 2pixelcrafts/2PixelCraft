@@ -5,7 +5,7 @@ import Testimonials from "@/components/Testimonials";
 import WhyNotUs from "@/components/WhyNotUs";
 import BusinessOutcomes from "@/components/BusinessOutcomes";
 import NobrainerOffer from "@/components/NobrainerOffer";
-import Projects from "@/components/Projects";
+// import Projects from "@/components/Projects";
 import GoodVsGreat from "@/components/GoodVsGreat";
 import Footer from "@/components/Footer";
 
@@ -27,7 +27,7 @@ export default function Home() {
         <WhyNotUs />
         <BusinessOutcomes />
         <NobrainerOffer />
-        <Projects />
+        {/* <Projects /> */}
         {/* <StatsSection /> */}
         <GoodVsGreat />
       </main>
