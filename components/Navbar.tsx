@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const links = [
@@ -23,29 +24,25 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/[0.07] shadow-xl shadow-black/30"
+          ? "bg-[#0a0a0a]/90 backdrop-blur-md shadow-xl shadow-black/30"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="flex items-center justify-between h-16">
+        <div className="relative flex h-16 items-center justify-center md:justify-between">
           {/* Logo */}
-          <a href="#" className="flex flex-col leading-tight group">
-            <div className="flex items-center gap-1">
-              <span className="font-unbounded font-bold text-white text-sm tracking-widest uppercase">
-                Tech
+          <a href="#" aria-label="Tech Butler home" className=" flex items-center">
+            <span className="relative block h-16 w-[290px] overflow-visible sm:w-[360px] md:w-[600px]">
+              <span className="absolute left-0 top-1/2 block h-24 w-[290px] -translate-y-1/2 sm:h-28 sm:w-[360px] md:h-40 md:w-[600px]">
+                <Image
+                  src="/Untitled design (13).png"
+                  alt="Tech Butler"
+                  fill
+                  priority
+                  sizes="(max-width: 639px) 290px, (max-width: 767px) 360px, 600px"
+                  className="object-contain object-center md:object-left"
+                />
               </span>
-              <span className="inline-grid grid-cols-3 gap-0.5 mx-0.5 transition-transform duration-500 group-hover:rotate-90">
-                {[...Array(9)].map((_, i) => (
-                  <span key={i} className="w-1 h-1 bg-blue-500 rounded-[1px]" />
-                ))}
-              </span>
-              <span className="font-unbounded font-bold text-white text-sm tracking-widest uppercase">
-                Butler
-              </span>
-            </div>
-            <span className="text-[9px] text-gray-500 tracking-widest uppercase font-poppins">
-              your technical co-founder
             </span>
           </a>
 
@@ -73,7 +70,7 @@ export default function Navbar() {
           <button
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
-            className="md:hidden text-gray-400 hover:text-white transition-colors p-1"
+            className="absolute right-0 text-gray-400 hover:text-white transition-colors p-1 md:hidden"
           >
             <div className="w-6 flex flex-col gap-[5px]">
               <span
@@ -102,7 +99,7 @@ export default function Navbar() {
           open ? "max-h-72 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-[#111111] border-t border-white/[0.07] px-6 py-5 flex flex-col gap-4">
+        <div className="bg-[#111111] px-6 py-5 flex flex-col gap-4">
           {links.map((l) => (
             <a
               key={l.label}
