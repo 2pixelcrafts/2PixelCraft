@@ -193,8 +193,8 @@ export default function PixelLoader({
         </span>
 
         <span
-          className="font-mono uppercase tracking-[0.22em] text-[#4F8EF7]/40 select-none"
-          style={{ fontSize: 9 }}
+          className="font-mono uppercase tracking-[0.22em] text-[#4F8EF7]/80 select-none"
+          style={{ fontSize: 12 }}
         >
           {text ?? "loading..."}
         </span>

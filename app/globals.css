@@ -3,6 +3,15 @@
 @theme inline {
   --font-poppins: var(--font-poppins);
   --font-unbounded: var(--font-unbounded);
+
+  /* ── Brand colours ────────────────────────────────────── */
+  --color-brand-blue: #4F8EF7;
+  --color-brand-mid:  #2a5abf;
+  --color-brand-dark: #0a0a0a;
+  --color-brand-cell: #1a1a1a;
+
+  /* ── Loader animation shorthand ───────────────────────── */
+  --animate-pixelwave: pixelwave 1.4s ease-in-out infinite;
 }
 
 /* ── Brand color palette ────────────────────────────────────
@@ -92,8 +101,8 @@ body {
 }
 
 @keyframes pixelwave {
-  0%, 100% { opacity: 1;   transform: scale(1);    }
-  50%       { opacity: 0.3; transform: scale(0.55); }
+  0%, 100% { opacity: 0.15; transform: scale(0.75); }
+  50%       { opacity: 1;    transform: scale(1);    }
 }
 
 /* ── Hero entrance classes ──────────────────────────────── */
