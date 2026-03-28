@@ -91,6 +91,11 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes pixelwave {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.3; transform: scale(0.55); }
+}
+
 /* ── Hero entrance classes ──────────────────────────────── */
 .hero-rise {
   opacity: 0;
