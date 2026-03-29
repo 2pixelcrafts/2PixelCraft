@@ -11,6 +11,7 @@ const projects = [
   {
     name: "Timect Watches",
     imageSrc: "/projects/timect.png",
+    mobileImageSrc: "/projects/timect-mobile.svg",
     imageAlt: "Timect Watches project preview",
     liveUrl: "https://timectwatches.2pixelcraft.com/",
   },
@@ -23,6 +24,7 @@ const projects = [
   {
     name: "Wistoan",
     imageSrc: "/projects/wistoan.png",
+    mobileImageSrc: "/projects/wistoan-mobile.png",
     imageAlt: "Wistoan project preview",
     liveUrl: "https://wistoanwatches.com/",
   },
@@ -30,32 +32,51 @@ const projects = [
 
 interface Project {
   name: string;
-  imageSrc: `/${string}.png`;
+  imageSrc: `/${string}.png` | `/${string}.svg`;
+  mobileImageSrc?: `/${string}.png` | `/${string}.svg`;
   imageAlt: string;
   liveUrl: `https://${string}`;
 }
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="h-full p-4 sm:p-6">
-      <div className="flex h-full items-center justify-center rounded-[24px] border border-gray-200 bg-slate-50 p-3 md:p-4">
-        <a
-          href={project.liveUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`Open ${project.name} website`}
-          className="group relative block h-[17rem] w-full overflow-hidden rounded-[18px] border border-gray-300 bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1 md:h-[24rem]"
-        >
+    <a
+      href={project.liveUrl}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Open ${project.name} website`}
+      className="group relative block h-full w-full overflow-hidden rounded-[28px] border border-gray-200 bg-slate-50"
+    >
+      {project.mobileImageSrc ? (
+        <>
+          <Image
+            src={project.mobileImageSrc}
+            alt={project.imageAlt}
+            fill
+            unoptimized
+            sizes="100vw"
+            className="object-contain sm:hidden"
+          />
           <Image
             src={project.imageSrc}
             alt={project.imageAlt}
             fill
-            sizes="(max-width: 768px) 100vw, 960px"
-            className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.01] md:p-3"
+            unoptimized
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 92vw, 1024px"
+            className="hidden object-contain sm:block"
           />
-        </a>
-      </div>
-    </div>
+        </>
+      ) : (
+        <Image
+          src={project.imageSrc}
+          alt={project.imageAlt}
+          fill
+          unoptimized
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 92vw, 1024px"
+          className="object-contain"
+        />
+      )}
+    </a>
   );
 }
 
@@ -85,7 +106,7 @@ export default function Projects() {
           {projects.map((project) => (
             <ScrollStackItem
               key={project.name}
-              itemClassName="bg-white border border-gray-200 !rounded-[28px] !h-[22rem] md:!h-[30rem]"
+              itemClassName="!h-[20rem] sm:!h-[24rem] md:!h-[30rem] !rounded-[28px] !border-0 !bg-transparent !p-0 !shadow-none overflow-hidden"
             >
               <ProjectCard project={project} />
             </ScrollStackItem>
