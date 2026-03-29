@@ -40,7 +40,26 @@ interface Project {
   liveUrl: `https://${string}`;
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  mobile = false,
+}: {
+  project: Project;
+  mobile?: boolean;
+}) {
+  const src = mobile && project.mobileImageSrc ? project.mobileImageSrc : project.imageSrc;
+  const imageProps =
+    mobile && project.mobileImageSrc
+      ? {
+          quality: 75,
+          sizes: "(max-width: 639px) calc(100vw - 3rem), 100vw",
+        }
+      : {
+          unoptimized: true,
+          sizes: "(max-width: 1280px) 92vw, 1024px",
+        };
+  const imageClassName = "object-contain";
+
   return (
     <a
       href={project.liveUrl}
@@ -49,35 +68,13 @@ function ProjectCard({ project }: { project: Project }) {
       aria-label={`Open ${project.name} website`}
       className="group relative block h-full w-full overflow-hidden rounded-[28px] border border-white bg-white sm:border-gray-200"
     >
-      {project.mobileImageSrc ? (
-        <>
-          <Image
-            src={project.mobileImageSrc}
-            alt={project.imageAlt}
-            fill
-            unoptimized
-            sizes="100vw"
-            className="object-contain sm:hidden"
-          />
-          <Image
-            src={project.imageSrc}
-            alt={project.imageAlt}
-            fill
-            unoptimized
-            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 92vw, 1024px"
-            className="hidden object-contain sm:block"
-          />
-        </>
-      ) : (
-        <Image
-          src={project.imageSrc}
-          alt={project.imageAlt}
-          fill
-          unoptimized
-          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 92vw, 1024px"
-          className="object-contain"
-        />
-      )}
+      <Image
+        src={src}
+        alt={project.imageAlt}
+        fill
+        {...imageProps}
+        className={imageClassName}
+      />
     </a>
   );
 }
@@ -95,7 +92,28 @@ export default function Projects() {
         </h2>
       </div>
 
-      <div className="max-w-5xl mx-auto">
+      <div className="mx-auto mt-10 max-w-md sm:hidden">
+        <ScrollStack
+          useWindowScroll={true}
+          itemDistance={180}
+          itemScale={0}
+          itemStackDistance={0}
+          stackPosition="10%"
+          scaleEndPosition="10%"
+          baseScale={1}
+        >
+          {projects.map((project) => (
+            <ScrollStackItem
+              key={project.name}
+              itemClassName="!h-[22rem] !rounded-[28px] !border-0 !bg-transparent !p-0 !shadow-none overflow-hidden"
+            >
+              <ProjectCard project={project} mobile />
+            </ScrollStackItem>
+          ))}
+        </ScrollStack>
+      </div>
+
+      <div className="hidden max-w-5xl mx-auto sm:block">
         <ScrollStack
           useWindowScroll={true}
           itemDistance={150}
