@@ -5,19 +5,21 @@ const projects = [
   {
     name: "Lux",
     imageSrc: "/projects/lux.png",
+    mobileImageSrc: "/projects/lux-mobile.png",
     imageAlt: "Lux project preview",
     liveUrl: "https://luxe.2pixelcraft.com/",
   },
   {
     name: "Timect Watches",
     imageSrc: "/projects/timect.png",
-    mobileImageSrc: "/projects/timect-mobile.svg",
+    mobileImageSrc: "/projects/timect-mobile.png",
     imageAlt: "Timect Watches project preview",
     liveUrl: "https://timectwatches.2pixelcraft.com/",
   },
   {
     name: "Titan Fitness",
     imageSrc: "/projects/titan-fitness.png",
+    mobileImageSrc: "/projects/titan-mobile.png",
     imageAlt: "Titan Fitness project preview",
     liveUrl: "https://titan-fitness.2pixelcraft.com/",
   },
@@ -45,7 +47,7 @@ function ProjectCard({ project }: { project: Project }) {
       target="_blank"
       rel="noreferrer"
       aria-label={`Open ${project.name} website`}
-      className="group relative block h-full w-full overflow-hidden rounded-[28px] border border-gray-200 bg-slate-50"
+      className="group relative block h-full w-full overflow-hidden rounded-[28px] border border-white bg-white sm:border-gray-200"
     >
       {project.mobileImageSrc ? (
         <>
