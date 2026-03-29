@@ -3,10 +3,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const links = [
-  { label: "Our Work", href: "#projects" },
-  { label: "Free Trial", href: "#offer" },
-  { label: "About Us", href: "#about" },
-  { label: "Careers", href: "#careers" },
+  { label: "Featured Projects", href: "/#projects" },
+  // { label: "No Brain Call", href: "/#offer" },
+  { label: "Good vs We", href: "/#about" },
 ];
 
 export default function Navbar() {
@@ -31,20 +30,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="relative flex h-16 items-center justify-center md:justify-between">
           {/* Logo */}
-          <a href="#" aria-label="Tech Butler home" className=" flex items-center">
-            <span className="relative block h-16 w-[290px] overflow-visible sm:w-[360px] md:w-[600px]">
-              <span className="absolute left-0 top-1/2 block h-24 w-[290px] -translate-y-1/2 sm:h-28 sm:w-[360px] md:h-40 md:w-[600px]">
-                <Image
-                  src="/Untitled design (13).png"
-                  alt="Tech Butler"
-                  fill
-                  priority
-                  loading="eager"
-                  sizes="(max-width: 639px) 290px, (max-width: 767px) 360px, 600px"
-                  className="object-contain object-center md:object-left"
-                />
-              </span>
-            </span>
+          <a href="/" aria-label="Tech Butler home" className="flex h-16 items-center">
+            <Image
+              src="/transparent website logo PNG.png"
+              alt="Tech Butler"
+              width={2427}
+              height={595}
+              preload
+              className="h-auto w-[170px] sm:w-[210px] md:w-[260px]"
+            />
           </a>
 
           {/* Desktop links */}
@@ -60,10 +54,10 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#offer"
+              href="/#offer"
               className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold font-poppins px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
             >
-              Book a Call
+              No Brain Call
             </a>
           </nav>
 
@@ -112,7 +106,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#offer"
+            href="/#offer"
             onClick={() => setOpen(false)}
             className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold font-poppins px-5 py-2.5 rounded-full text-center transition-colors duration-200"
           >

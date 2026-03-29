@@ -34,15 +34,15 @@ export default function NobrainerOffer() {
           <div>
             <div className="reveal flex items-center gap-3 mb-8">
               <span className="bg-blue-500 text-white font-unbounded font-bold text-lg px-3 py-1 rounded">
-                Simple offer
+                No-brainer
               </span>
               <span className="text-black font-unbounded font-bold text-2xl">
-                — no tricks
+                offer
               </span>
             </div>
 
             <p className="reveal stagger-1 font-poppins text-gray-800 text-lg leading-relaxed mb-4">
-              Try us for 2 weeks and see for yourself. In that time, we can:
+              Start with a 2-week paid trial where we:
             </p>
 
             <ul className="reveal stagger-2 space-y-3 mb-8 font-poppins text-gray-700 text-base">
@@ -91,3 +91,4 @@ export default function NobrainerOffer() {
     </section>
   );
 }
+

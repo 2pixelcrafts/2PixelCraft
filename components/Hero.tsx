@@ -17,12 +17,12 @@ export default function Hero() {
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
 
         {/* Status badge */}
-        <div className="hero-rise hero-delay-1 inline-flex items-center gap-2.5 bg-white/6 border border-white/10 rounded-full px-4 py-1.5 mb-8">
+        {/* <div className="hero-rise hero-delay-1 inline-flex items-center gap-2.5 bg-white/6 border border-white/10 rounded-full px-4 py-1.5 mb-8">
           <span className="dot-blink w-2 h-2 rounded-full bg-green-400 shrink-0" />
           <span className="font-poppins text-gray-300 text-sm">
             Now taking on new clients
           </span>
-        </div>
+        </div> */}
 
         {/* Headline */}
         <h1 className="hero-rise hero-delay-2 font-unbounded font-bold text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.15] tracking-tight">

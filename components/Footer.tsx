@@ -1,12 +1,16 @@
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Our Work", href: "#projects" },
-  { label: "Free Trial", href: "#offer" },
-  { label: "About Us", href: "#about" },
-  { label: "Careers", href: "#careers" },
+  { label: "Our Work", href: "/#projects" },
+  { label: "Free Trial", href: "/#offer" },
+  { label: "About Us", href: "/#about" },
+  { label: "Careers", href: "/#careers" },
 ];
-const legalLinks = ["Privacy", "Terms", "Contact"];
+const legalLinks = [
+  { label: "Privacy", href: "/privacy-policy" },
+  { label: "Terms",   href: "/terms" },
+  { label: "Contact", href: "/contact" },
+];
 
 const socials = [
   {
@@ -87,11 +91,11 @@ export default function Footer() {
           <div className="flex items-center justify-center gap-5">
             {legalLinks.map((link) => (
               <a
-                key={link}
-                href="#"
+                key={link.label}
+                href={link.href}
                 className="text-gray-600 hover:text-white text-sm font-poppins transition-colors duration-200"
               >
-                {link}
+                {link.label}
               </a>
             ))}
           </div>

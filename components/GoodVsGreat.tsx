@@ -27,7 +27,7 @@ export default function GoodVsGreat() {
     <section
       id="about"
       ref={ref}
-      className="bg-[#0f0f0f] px-6 lg:px-10 pt-10 pb-24"
+      className="bg-[#0f0f0f] px-6 lg:px-10 py-24"
     >
       <div className="max-w-4xl mx-auto space-y-10">
         <p className="reveal font-unbounded font-bold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight">

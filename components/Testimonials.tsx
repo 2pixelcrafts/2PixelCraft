@@ -288,8 +288,18 @@ export default function Testimonials() {
         </h2>
       </div>
 
+      {/* Bottom-center SVG illustration */}
+      <div className="absolute left-1/2 bottom-0 -translate-x-1/2 z-[1] pointer-events-none">
+        <img
+          src="/Problem-solving-bro.svg"
+          alt=""
+          aria-hidden="true"
+          className="w-[260px] sm:w-[320px] lg:w-[420px] h-auto opacity-90"
+        />
+      </div>
+
       {/* Scattered cards — hidden on mobile, shown on lg */}
-      <div className="hidden lg:block absolute inset-0">
+      <div className="hidden lg:block absolute inset-0 z-[2]">
         {testimonials.map((t, i) => (
           <div
             key={i}
