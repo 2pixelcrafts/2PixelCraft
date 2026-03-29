@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const links = [
@@ -30,35 +31,35 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="relative flex h-16 items-center justify-center md:justify-between">
           {/* Logo */}
-          <a href="/" aria-label="Tech Butler home" className="flex h-16 items-center">
+          <Link href="/" aria-label="Tech Butler home" className="inline-flex items-center">
             <Image
-              src="/transparent website logo PNG.png"
+              src="/transparent website logo.png"
               alt="Tech Butler"
-              width={2427}
-              height={595}
+              width={2547}
+              height={631}
               preload
-              className="h-auto w-[170px] sm:w-[210px] md:w-[260px]"
+              className="h-auto w-[140px] sm:w-[170px] md:w-[200px]"
             />
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <nav className="hidden md:flex items-center gap-8">
             {links.map((l) => (
-              <a
+              <Link
                 key={l.label}
                 href={l.href}
                 className="relative text-gray-400 hover:text-white text-sm font-poppins transition-colors duration-200 group"
               >
                 {l.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-blue-500 transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
-            <a
+            <Link
               href="/#offer"
               className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold font-poppins px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
             >
               No Brain Call
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile toggle — animated to X */}
@@ -96,22 +97,22 @@ export default function Navbar() {
       >
         <div className="bg-[#111111] px-6 py-5 flex flex-col gap-4">
           {links.map((l) => (
-            <a
+            <Link
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
               className="text-gray-300 hover:text-white font-poppins text-sm transition-colors duration-200"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="/#offer"
             onClick={() => setOpen(false)}
             className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold font-poppins px-5 py-2.5 rounded-full text-center transition-colors duration-200"
           >
             Book a Call
-          </a>
+          </Link>
         </div>
       </div>
     </header>

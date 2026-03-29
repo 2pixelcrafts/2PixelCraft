@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
   { label: "Our Work", href: "/#projects" },
@@ -53,32 +54,32 @@ export default function Footer() {
             ))}
           </div>
 
-          <a href="#" aria-label="Tech Butler home" className="flex shrink-0 items-center justify-center self-center">
-            <span className="relative block h-10 w-[280px] shrink-0 overflow-visible sm:w-[420px]">
-              <span className="absolute left-0 top-1/2 block h-20 w-[280px] -translate-y-1/2 sm:h-28 sm:w-[420px]">
-                <Image
-                  src="/Untitled design (13).png"
-                  alt="Tech Butler"
-                  fill
-                  loading="eager"
-                  sizes="(max-width: 639px) 280px, 420px"
-                  className="object-contain object-center"
-                />
-              </span>
-            </span>
-          </a>
+          <Link
+            href="/"
+            aria-label="Tech Butler home"
+            className="inline-flex shrink-0 items-center justify-center self-center sm:-ml-22"
+          >
+            <Image
+              src="/transparent website logo.png"
+              alt="Tech Butler"
+              width={2547}
+              height={631}
+              loading="eager"
+              className="h-auto w-[130px] sm:w-[170px]"
+            />
+          </Link>
 
           <div className="flex justify-center sm:flex-1 sm:basis-0 sm:justify-end">
             <nav className="flex flex-wrap items-center justify-center gap-5 text-center sm:justify-end">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className="relative text-gray-400 hover:text-white text-sm font-poppins transition-colors duration-200 group"
                 >
                   {link.label}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-blue-500 transition-all duration-300 group-hover:w-full" />
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -90,13 +91,13 @@ export default function Footer() {
           </p>
           <div className="flex items-center justify-center gap-5">
             {legalLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className="text-gray-600 hover:text-white text-sm font-poppins transition-colors duration-200"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
