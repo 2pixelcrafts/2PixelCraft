@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Unbounded, Poppins } from "next/font/google";
-import { siteConfig } from "@/app/seo";
+import { absoluteUrl, siteConfig } from "@/app/seo";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   keywords: [...siteConfig.keywords],
   referrer: "origin-when-cross-origin",
   category: "technology",
-  alternates: {
-    canonical: "/",
-  },
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" },
@@ -52,15 +49,38 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     locale: siteConfig.locale,
+    images: [
+      {
+        url: absoluteUrl("/opengraph-image"),
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} social preview`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [
+      {
+        url: absoluteUrl("/twitter-image"),
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} Twitter preview`,
+      },
+    ],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 

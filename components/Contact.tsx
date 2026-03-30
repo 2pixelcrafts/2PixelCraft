@@ -4,43 +4,59 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PixelLoader from "@/components/PixelLoader";
+import { siteConfig } from "@/app/seo";
 
-const WEB3FORMS_KEY = "c8bfd952-44de-48e2-879a-804748d423c6"; // 🔑 Replace with your key from web3forms.com
+const WEB3FORMS_KEY = "c8bfd952-44de-48e2-879a-804748d423c6"; // Replace with your key from web3forms.com
 
 const contactInfo = [
   {
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+        />
       </svg>
     ),
     label: "Email us at",
-    value: "dixitambaliya942@gmail.com",
+    value: siteConfig.email,
   },
   {
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+        />
+      </svg>
+    ),
+    label: "Call us at",
+    value: siteConfig.phoneDisplay,
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
       </svg>
     ),
     label: "Response time",
     value: "Within 1 business day",
   },
-  // {
-  //   icon: (
-  //     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-  //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 3H3a2 2 0 00-2 2v14a2 2 0 002 2h18a2 2 0 002-2V5a2 2 0 00-2-2z" />
-  //     </svg>
-  //   ),
-  //   label: "Live chat",
-  //   value: "Available on our website",
-  // },
-];
+] as const;
 
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactPage() {
-  const [status, setStatus]     = useState<Status>("idle");
+  const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -75,33 +91,21 @@ export default function ContactPage() {
       <Navbar />
 
       <main className="min-h-screen bg-[#0f0f0f] text-white">
-        {/* ── Hero strip ───────────────────────────────────────────── */}
         <div className="relative overflow-hidden pt-32 pb-20 px-6">
-          {/* Background glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#4F8EF7]/10 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="relative z-10 max-w-2xl mx-auto text-center">
-            {/* <span className="inline-flex items-center gap-2 bg-[#4F8EF7]/10 border border-[#4F8EF7]/20 text-[#4F8EF7] text-xs font-mono uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#4F8EF7] animate-pulse" />
-              Now taking on new clients
-            </span> */}
             <h1 className="font-unbounded font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-5">
-              Let&apos;s build{" "}
-              <span className="text-[#4F8EF7]">something</span>{" "}
-              great
+              Let&apos;s build <span className="text-[#4F8EF7]">something</span> great
             </h1>
             <p className="text-white/50 text-lg leading-relaxed font-poppins">
-              Not sure where to start? Drop us a message and we&apos;ll get back within one business day — no pressure, no jargon.
+              Not sure where to start? Drop us a message and we&apos;ll get back within one business day with practical guidance on web design, app development, or custom software.
             </p>
           </div>
         </div>
 
-        {/* ── Main grid ─────────────────────────────────────────────── */}
         <div className="max-w-6xl mx-auto px-6 pb-28 grid lg:grid-cols-[1fr_1.4fr] gap-10 items-start">
-
-          {/* Left — info ─────────────────────────────────────────── */}
           <div className="space-y-8">
-            {/* Contact info cards */}
             <div className="space-y-4">
               {contactInfo.map((item) => (
                 <div
@@ -119,10 +123,8 @@ export default function ContactPage() {
               ))}
             </div>
 
-            {/* Divider */}
             <div className="border-t border-white/[0.07]" />
 
-            {/* Promise block */}
             <div className="space-y-4">
               {[
                 "No spam. Ever.",
@@ -141,9 +143,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right — form ────────────────────────────────────────── */}
           <div className="bg-white/[0.03] border border-white/[0.08] rounded-3xl p-7 sm:p-9 backdrop-blur-sm">
-
             {status === "success" ? (
               <div className="flex flex-col items-center justify-center text-center py-16 gap-5">
                 <div className="w-16 h-16 rounded-full bg-[#4F8EF7]/15 flex items-center justify-center">
@@ -164,7 +164,6 @@ export default function ContactPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Honeypot */}
                 <input type="checkbox" name="botcheck" className="hidden" />
                 <input type="hidden" name="subject" value="New Project Inquiry - 2PixelCraft" />
 
@@ -242,7 +241,10 @@ export default function ContactPage() {
 
                 <p className="text-center text-white/25 text-xs font-poppins">
                   By sending, you agree to our{" "}
-                  <a href="/privacy-policy" className="underline hover:text-white/50 transition-colors">Privacy Policy</a>.
+                  <a href="/privacy-policy" className="underline hover:text-white/50 transition-colors">
+                    Privacy Policy
+                  </a>
+                  .
                 </p>
               </form>
             )}
@@ -254,8 +256,6 @@ export default function ContactPage() {
     </>
   );
 }
-
-// ── Helpers ────────────────────────────────────────────────────────────────────
 
 const inputCls =
   "w-full bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15] focus:border-[#4F8EF7]/60 focus:bg-white/[0.06] rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none transition-all duration-200 font-poppins";

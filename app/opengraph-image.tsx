@@ -69,7 +69,7 @@ export default function OpenGraphImage() {
               fontWeight: 800,
             }}
           >
-            Websites, apps, and custom software that help businesses grow.
+            Web design, apps, and custom software for local businesses.
           </div>
           <div
             style={{

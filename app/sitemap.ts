@@ -16,6 +16,7 @@ const staticRoutes: SitemapRoute[] = [
     changeFrequency: "weekly" as const,
     priority: 1,
     images: [
+      `${siteConfig.url}/opengraph-image`,
       `${siteConfig.url}/logo.png`,
       `${siteConfig.url}/transparent%20website%20logo.png`,
       `${siteConfig.url}/projects/lux.png`,
@@ -28,16 +29,6 @@ const staticRoutes: SitemapRoute[] = [
     path: "/contact",
     changeFrequency: "monthly" as const,
     priority: 0.8,
-  },
-  {
-    path: "/privacy-policy",
-    changeFrequency: "yearly" as const,
-    priority: 0.3,
-  },
-  {
-    path: "/terms",
-    changeFrequency: "yearly" as const,
-    priority: 0.3,
   },
 ];
 

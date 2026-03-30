@@ -6,28 +6,28 @@ const projects = [
     name: "Lux",
     imageSrc: "/projects/lux.png",
     mobileImageSrc: "/projects/lux-mobile.png",
-    imageAlt: "Lux project preview",
+    imageAlt: "Screenshot of the Lux website project designed and built by 2PixelCraft",
     liveUrl: "https://luxe.2pixelcraft.com/",
   },
   {
     name: "Timect Watches",
     imageSrc: "/projects/timect.png",
     mobileImageSrc: "/projects/timect-mobile.png",
-    imageAlt: "Timect Watches project preview",
+    imageAlt: "Screenshot of the Timect Watches website project built by 2PixelCraft",
     liveUrl: "https://timectwatches.2pixelcraft.com/",
   },
   {
     name: "Titan Fitness",
     imageSrc: "/projects/titan-fitness.png",
     mobileImageSrc: "/projects/titan-mobile.png",
-    imageAlt: "Titan Fitness project preview",
+    imageAlt: "Screenshot of the Titan Fitness website project built by 2PixelCraft",
     liveUrl: "https://titan-fitness.2pixelcraft.com/",
   },
   {
     name: "Wistoan",
     imageSrc: "/projects/wistoan.png",
     mobileImageSrc: "/projects/wistoan-mobile.png",
-    imageAlt: "Wistoan project preview",
+    imageAlt: "Screenshot of the Wistoan website project built by 2PixelCraft",
     liveUrl: "https://wistoanwatches.com/",
   },
 ] as const;
@@ -83,13 +83,15 @@ export default function Projects() {
   return (
     <section id="projects" className="bg-white py-20 px-6 lg:px-10">
       <div className="max-w-5xl mx-auto">
-        {/* Title */}
         <h2 className="text-center font-unbounded font-bold text-4xl sm:text-5xl text-black">
           Featured{" "}
           <span className="bg-blue-500 text-white px-3 py-1 rounded">
             Projects
           </span>
         </h2>
+        <p className="mx-auto mt-4 max-w-3xl text-center font-poppins text-base leading-relaxed text-gray-600 sm:text-lg">
+          A selection of websites and digital products 2PixelCraft has designed and built for growing businesses.
+        </p>
       </div>
 
       <div className="mx-auto mt-10 max-w-md sm:hidden">

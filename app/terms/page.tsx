@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { createPageMetadata } from "@/app/seo";
 
-export const metadata: Metadata = {
-  title: "Terms and Conditions",
-  description: "Terms and Conditions for 2PixelCraft - your rights and obligations when using our services.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Terms and Conditions | 2PixelCraft",
+  description:
+    "Terms and Conditions for 2PixelCraft, including the rights and responsibilities that apply when using our website and services.",
+  path: "/terms",
+  noIndex: true,
+});
 
 const sections = [
   {

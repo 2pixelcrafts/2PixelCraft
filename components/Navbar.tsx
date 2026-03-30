@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 
 const links = [
   { label: "Featured Projects", href: "/#projects" },
-  // { label: "No Brain Call", href: "/#offer" },
-  { label: "Good vs We", href: "/#about" },
+  { label: "Why 2PixelCraft", href: "/#about" },
 ];
 
 export default function Navbar() {
@@ -30,7 +29,6 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="relative flex h-16 items-center justify-center md:justify-between">
-          {/* Logo */}
           <Link href="/" aria-label="2PixelCraft home" className="inline-flex items-center">
             <Image
               src="/transparent website logo.png"
@@ -42,15 +40,14 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop links */}
           <nav className="hidden md:flex items-center gap-8">
-            {links.map((l) => (
+            {links.map((link) => (
               <Link
-                key={l.label}
-                href={l.href}
+                key={link.label}
+                href={link.href}
                 className="relative text-gray-400 hover:text-white text-sm font-poppins transition-colors duration-200 group"
               >
-                {l.label}
+                {link.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
@@ -58,11 +55,10 @@ export default function Navbar() {
               href="/#book-call"
               className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold font-poppins px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
             >
-              No Brain Call
+              Book a Call
             </Link>
           </nav>
 
-          {/* Mobile toggle — animated to X */}
           <button
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
@@ -89,21 +85,20 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu — slide down */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           open ? "max-h-72 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="bg-[#111111] px-6 py-5 flex flex-col gap-4">
-          {links.map((l) => (
+          {links.map((link) => (
             <Link
-              key={l.label}
-              href={l.href}
+              key={link.label}
+              href={link.href}
               onClick={() => setOpen(false)}
               className="text-gray-300 hover:text-white font-poppins text-sm transition-colors duration-200"
             >
-              {l.label}
+              {link.label}
             </Link>
           ))}
           <Link

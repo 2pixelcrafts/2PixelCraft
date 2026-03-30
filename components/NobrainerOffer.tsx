@@ -73,9 +73,9 @@ export default function NobrainerOffer() {
                 Video call link provided after booking
               </div>
               <p className="text-sm text-gray-500 font-poppins">
-                <a href="#" className="underline underline-offset-2 hover:text-gray-800 transition-colors">
+                <span className="underline underline-offset-2">
                   7 out of 10 clients
-                </a>{" "}
+                </span>{" "}
                 who start with us are still working with us a year later.
               </p>
             </div>
