@@ -32,10 +32,10 @@ export default function NobrainerOffer() {
           {/* Left */}
           <div>
             <div className="reveal flex items-center gap-3 mb-8">
-              <span className="bg-blue-500 text-white font-unbounded font-bold text-lg px-3 py-1 rounded">
+              <span className="bg-blue-500 text-white font-unbounded font-bold text-4xl px-3 py-1 rounded">
                 No-brainer
               </span>
-              <span className="text-black font-unbounded font-bold text-2xl">
+              <span className="text-black font-unbounded font-bold text-4xl">
                 offer
               </span>
             </div>
