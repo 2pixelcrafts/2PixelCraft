@@ -166,7 +166,7 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Honeypot */}
                 <input type="checkbox" name="botcheck" className="hidden" />
-                <input type="hidden" name="subject" value="New Project Inquiry — Techiebutler" />
+                <input type="hidden" name="subject" value="New Project Inquiry - 2PixelCraft" />
 
                 <Field label="Name">
                   <input

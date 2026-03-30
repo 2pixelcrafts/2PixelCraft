@@ -61,7 +61,7 @@ export default function Hero() {
         {/* CTA buttons */}
         <div className="hero-rise hero-delay-4 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="#offer"
+            href="#book-call"
             className="bg-blue-500 hover:bg-blue-400 text-white font-semibold font-poppins px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/30 active:scale-95"
           >
             Book a Free Call

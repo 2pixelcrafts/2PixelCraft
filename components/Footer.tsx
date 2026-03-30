@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Featured Projects", href: "/#projects" },
-  { label: "No Brain Call", href: "/#offer" },
+  { label: "No Brain Call", href: "/#book-call" },
   { label: "Good vs We", href: "/#about" },
 ];
 
@@ -56,12 +56,12 @@ export default function Footer() {
 
           <Link
             href="/"
-            aria-label="Tech Butler home"
+            aria-label="2PixelCraft home"
             className="inline-flex shrink-0 items-center justify-center self-center sm:-ml-22"
           >
             <Image
               src="/transparent website logo.png"
-              alt="Tech Butler"
+              alt="2PixelCraft"
               width={2547}
               height={631}
               loading="eager"

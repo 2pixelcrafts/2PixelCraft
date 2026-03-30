@@ -27,7 +27,7 @@ export default function PageLoader({ text }: PageLoaderProps) {
         pointerEvents: fading ? "none" : "auto",
       }}
     >
-      <PixelLoader text={text} />
+      <PixelLoader text={text} size="sm" />
     </div>
   )
 }

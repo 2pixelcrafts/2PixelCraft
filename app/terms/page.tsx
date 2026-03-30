@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
-  description: "Terms and Conditions for Techiebutler — your rights and obligations when using our services.",
+  description: "Terms and Conditions for 2PixelCraft - your rights and obligations when using our services.",
 };
 
 const sections = [
@@ -15,19 +15,19 @@ const sections = [
   },
   {
     title: "2. Services",
-    body: "Techiebutler works closely with startup founders and CTOs to build and ship products efficiently. All services are subject to mutual agreement and are delivered according to agreed timelines and deliverables.",
+    body: "2PixelCraft works closely with startup founders and CTOs to build and ship products efficiently. All services are subject to mutual agreement and are delivered according to agreed timelines and deliverables.",
   },
   {
     title: "3. Payment Terms",
     items: [
       "All payments must be made in full as per the agreed terms before or during the provision of services.",
-      "We accept payments via secure channels, including Stripe and other approved methods.",
+      "We accept payments via secure channels and other approved methods.",
       "Prices are subject to change without notice.",
     ],
   },
   {
     title: "4. Intellectual Property",
-    body: "All designs, code, content, and materials developed by Techiebutler remain our intellectual property unless otherwise agreed in writing.",
+    body: "All designs, code, content, and materials developed by 2PixelCraft remain our intellectual property unless otherwise agreed in writing.",
   },
   {
     title: "5. Limitation of Liability",
@@ -69,7 +69,7 @@ export default function TermsAndConditions() {
         </div>
 
         <p className="text-gray-300 mb-10 leading-relaxed">
-          Welcome to Techiebutler. By accessing or using our website (https://techiebutler.com/), you agree to comply
+          Welcome to 2PixelCraft. By accessing or using our website (https://www.2pixelcraft.com/), you agree to comply
           with and be bound by the following terms and conditions. If you do not agree, please discontinue using our
           site.
         </p>

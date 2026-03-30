@@ -31,10 +31,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="relative flex h-16 items-center justify-center md:justify-between">
           {/* Logo */}
-          <Link href="/" aria-label="Tech Butler home" className="inline-flex items-center">
+          <Link href="/" aria-label="2PixelCraft home" className="inline-flex items-center">
             <Image
               src="/transparent website logo.png"
-              alt="Tech Butler"
+              alt="2PixelCraft"
               width={2547}
               height={631}
               preload
@@ -55,7 +55,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/#offer"
+              href="/#book-call"
               className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold font-poppins px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
             >
               No Brain Call
@@ -107,7 +107,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/#offer"
+            href="/#book-call"
             onClick={() => setOpen(false)}
             className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold font-poppins px-5 py-2.5 rounded-full text-center transition-colors duration-200"
           >

@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import CalendlyWidget from "./CalendlyWidget";
-
-const CALENDLY_URL = "https://calendly.com/taman5258/30min";
+import { CALENDLY_URL } from "@/components/calendly";
 
 export default function NobrainerOffer() {
   const ref = useRef<HTMLDivElement>(null);
@@ -83,7 +82,7 @@ export default function NobrainerOffer() {
           </div>
 
           {/* Right — Calendly */}
-          <div className="reveal stagger-2">
+          <div id="book-call" className="reveal stagger-2 scroll-mt-28">
             <CalendlyWidget url={CALENDLY_URL} />
           </div>
         </div>
