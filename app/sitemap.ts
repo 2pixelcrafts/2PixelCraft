@@ -3,7 +3,14 @@ import { siteConfig } from "@/app/seo";
 
 const lastModified = new Date("2026-03-30T00:00:00.000Z");
 
-const staticRoutes = [
+type SitemapRoute = {
+  path: string;
+  changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
+  priority: number;
+  images?: string[];
+};
+
+const staticRoutes: SitemapRoute[] = [
   {
     path: "",
     changeFrequency: "weekly" as const,
@@ -32,7 +39,7 @@ const staticRoutes = [
     changeFrequency: "yearly" as const,
     priority: 0.3,
   },
-] as const;
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return staticRoutes.map((route) => ({
