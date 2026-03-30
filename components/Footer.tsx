@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Our Work", href: "/#projects" },
-  { label: "Free Trial", href: "/#offer" },
-  { label: "About Us", href: "/#about" },
-  { label: "Careers", href: "/#careers" },
+  { label: "Featured Projects", href: "/#projects" },
+  { label: "No Brain Call", href: "/#offer" },
+  { label: "Good vs We", href: "/#about" },
 ];
+
 const legalLinks = [
   { label: "Privacy", href: "/privacy-policy" },
-  { label: "Terms",   href: "/terms" },
+  { label: "Terms", href: "/terms" },
   { label: "Contact", href: "/contact" },
 ];
 
