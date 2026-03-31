@@ -5,11 +5,10 @@ import Footer from "@/components/Footer";
 import { createPageMetadata, siteConfig } from "@/app/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Privacy Policy | 2PixelCraft",
+  title: "Privacy Policy",
   description:
-    "Privacy Policy for 2PixelCraft, including how we collect, use, and protect personal information.",
+    "Learn about how 2PixelCraft collects, uses, and protects your personal information in our Privacy Policy.",
   path: "/privacy-policy",
-  noIndex: true,
 });
 
 const sections = [

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const links = [
   { label: "Featured Projects", href: "/#projects" },
@@ -11,6 +12,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 24);
@@ -18,6 +20,13 @@ export default function Navbar() {
     handler();
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <header
@@ -29,13 +38,18 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="relative flex h-16 items-center justify-center md:justify-between">
-          <Link href="/" aria-label="2PixelCraft home" className="inline-flex items-center">
+          <Link
+            href="/"
+            onClick={handleLogoClick}
+            aria-label="2PixelCraft home"
+            className="inline-flex items-center"
+          >
             <Image
               src="/transparent website logo.png"
-              alt="2PixelCraft"
+              alt="2PixelCraft - Web Design & App Development Agency logo"
               width={2547}
               height={631}
-              preload
+              priority
               className="h-auto w-[140px] sm:w-[170px] md:w-[200px]"
             />
           </Link>

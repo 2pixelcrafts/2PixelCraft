@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -290,10 +291,11 @@ export default function Testimonials() {
 
       {/* Bottom-center SVG illustration */}
       <div className="absolute left-1/2 bottom-0 -translate-x-1/2 z-[1] pointer-events-none">
-        <img
+        <Image
           src="/Problem-solving-bro.svg"
-          alt=""
-          aria-hidden="true"
+          alt="Problem solving illustration representing 2PixelCraft's approach"
+          width={420}
+          height={420}
           className="w-[260px] sm:w-[320px] lg:w-[420px] h-auto opacity-90"
         />
       </div>

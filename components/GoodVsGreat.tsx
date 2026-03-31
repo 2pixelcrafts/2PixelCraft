@@ -30,18 +30,18 @@ export default function GoodVsGreat() {
       className="bg-[#0f0f0f] px-6 lg:px-10 py-24"
     >
       <div className="max-w-4xl mx-auto space-y-10">
-        <p className="reveal font-unbounded font-bold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight">
+        <h2 className="reveal font-unbounded font-bold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight">
           Having a{" "}
           <span className="border-b-2 border-blue-500 pb-1">website?</span>{" "}
           That&apos;s easy now.
-        </p>
-        <p className="reveal stagger-1 font-unbounded font-bold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight">
+        </h2>
+        <h2 className="reveal stagger-1 font-unbounded font-bold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight">
           But having a website that{" "}
           <span className="border-b-2 border-blue-500 pb-1">
             actually gets you customers?
           </span>{" "}
           That&apos;s a different story.
-        </p>
+        </h2>
 
         <p className="reveal stagger-2 font-poppins text-gray-400 text-xl sm:text-2xl leading-relaxed">
           The real challenge is building something that looks good, works well,

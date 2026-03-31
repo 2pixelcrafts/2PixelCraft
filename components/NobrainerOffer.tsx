@@ -31,14 +31,14 @@ export default function NobrainerOffer() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left */}
           <div>
-            <div className="reveal flex items-center gap-3 mb-8">
+            <h2 className="reveal flex items-center gap-3 mb-8">
               <span className="bg-blue-500 text-white font-unbounded font-bold text-4xl px-3 py-1 rounded">
                 No-brainer
               </span>
               <span className="text-black font-unbounded font-bold text-4xl">
                 offer
               </span>
-            </div>
+            </h2>
 
             <p className="reveal stagger-1 font-poppins text-gray-800 text-lg leading-relaxed mb-4">
               Start with a 2-week paid trial where we:

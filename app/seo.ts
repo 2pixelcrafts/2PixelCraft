@@ -3,10 +3,8 @@ import type { Metadata } from "next";
 export const siteConfig = {
   name: "2PixelCraft",
   legalName: "2PixelCraft",
-  title:
-    "Web Design, App Development, and Custom Software for Local Businesses | 2PixelCraft",
-  description:
-    "2PixelCraft helps local businesses launch better websites, build apps, and develop custom software with fast delivery, clear communication, and dependable execution.",
+  title: "2PixelCraft | Web Design, App Development & Custom Software for Local Businesses",
+  description: "2PixelCraft builds websites, apps, and custom software for local businesses. Fast delivery, clear communication, dependable execution. Based in India.",
   url: "https://www.2pixelcraft.com",
   locale: "en_US",
   email: "taman@2pixelcraft.com",
@@ -15,17 +13,13 @@ export const siteConfig = {
   country: "India",
   keywords: [
     "2PixelCraft",
-    "web design agency",
-    "website development agency",
-    "app development agency",
-    "custom software development",
-    "custom software agency",
-    "web design for local businesses",
-    "website development for local businesses",
-    "web app development",
-    "small business website development",
-    "business website agency",
-    "software development for local businesses",
+    "web development agency",
+    "app development India",
+    "custom software local businesses",
+    "website design agency India",
+    "Next.js development agency",
+    "web design Rajkot",
+    "software company Gujarat"
   ],
   services: [
     "Website design",
@@ -37,20 +31,10 @@ export const siteConfig = {
   ],
 } as const;
 
-export const absoluteUrl = (path = "/") => new URL(path, siteConfig.url).toString();
-
-const sharedOpenGraphImage = {
-  url: absoluteUrl("/opengraph-image"),
-  width: 1200,
-  height: 630,
-  alt: `${siteConfig.name} social preview`,
-};
-
-const sharedTwitterImage = {
-  url: absoluteUrl("/twitter-image"),
-  width: 1200,
-  height: 630,
-  alt: `${siteConfig.name} Twitter preview`,
+export const absoluteUrl = (path = "/") => {
+  if (path === "/") return siteConfig.url;
+  const url = path.startsWith("/") ? path : `/${path}`;
+  return `${siteConfig.url}${url}`;
 };
 
 type PageMetadataOptions = {
@@ -68,27 +52,36 @@ export function createPageMetadata({
   keywords = [],
   noIndex = false,
 }: PageMetadataOptions): Metadata {
+  const pageTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.title;
+
   return {
-    title,
+    title: pageTitle,
     description,
     keywords: Array.from(new Set([...siteConfig.keywords, ...keywords])),
     alternates: {
-      canonical: path,
+      canonical: absoluteUrl(path),
     },
     openGraph: {
       type: "website",
       url: absoluteUrl(path),
       siteName: siteConfig.name,
-      title: title ?? siteConfig.title,
+      title: pageTitle,
       description,
       locale: siteConfig.locale,
-      images: [sharedOpenGraphImage],
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: siteConfig.name,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: title ?? siteConfig.title,
+      title: pageTitle,
       description,
-      images: [sharedTwitterImage],
+      images: ["/og-image.png"],
     },
     robots: noIndex
       ? {
@@ -112,49 +105,3 @@ export function createPageMetadata({
         },
   };
 }
-
-export const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: siteConfig.name,
-  url: siteConfig.url,
-  description: siteConfig.description,
-  inLanguage: "en",
-};
-
-export const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: siteConfig.legalName,
-  url: siteConfig.url,
-  email: siteConfig.email,
-  telephone: siteConfig.phone,
-  logo: absoluteUrl("/logo.png"),
-  image: absoluteUrl("/opengraph-image"),
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      contactType: "sales",
-      email: siteConfig.email,
-      telephone: siteConfig.phone,
-      areaServed: siteConfig.country,
-      availableLanguage: ["English"],
-    },
-  ],
-};
-
-export const professionalServiceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: siteConfig.name,
-  url: siteConfig.url,
-  description: siteConfig.description,
-  image: absoluteUrl("/opengraph-image"),
-  logo: absoluteUrl("/logo.png"),
-  email: siteConfig.email,
-  telephone: siteConfig.phone,
-  areaServed: siteConfig.country,
-  availableLanguage: ["English"],
-  serviceType: [...siteConfig.services],
-  knowsAbout: [...siteConfig.services],
-};

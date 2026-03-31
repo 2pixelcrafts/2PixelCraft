@@ -5,11 +5,10 @@ import Footer from "@/components/Footer";
 import { createPageMetadata } from "@/app/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Terms and Conditions | 2PixelCraft",
+  title: "Terms and Conditions",
   description:
-    "Terms and Conditions for 2PixelCraft, including the rights and responsibilities that apply when using our website and services.",
+    "Review the terms and conditions for using 2PixelCraft's website and services.",
   path: "/terms",
-  noIndex: true,
 });
 
 const sections = [

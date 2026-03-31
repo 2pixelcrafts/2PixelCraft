@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/app/seo";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Featured Projects", href: "/#projects" },
@@ -33,6 +35,15 @@ const legalLinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-[#0f0f0f] border-t border-white/[0.07] px-6 lg:px-10 pt-10 pb-8">
       <div className="max-w-6xl mx-auto">
@@ -72,15 +83,16 @@ export default function Footer() {
 
           <Link
             href="/"
+            onClick={handleLogoClick}
             aria-label="2PixelCraft home"
             className="inline-flex shrink-0 items-center justify-center self-center sm:-ml-22"
           >
             <Image
               src="/transparent website logo.png"
-              alt="2PixelCraft"
+              alt="2PixelCraft logo - Web Design and App Development Agency"
               width={2547}
               height={631}
-              loading="eager"
+              loading="lazy"
               className="h-auto w-[130px] sm:w-[170px]"
             />
           </Link>
