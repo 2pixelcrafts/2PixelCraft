@@ -10,6 +10,12 @@ const projects = [
     liveUrl: "https://luxe.2pixelcraft.com/",
   },
   {
+    name: "Radhika",
+    imageSrc: "/projects/radhika.png",
+    mobileImageSrc: "/projects/radhika-mobile.png",
+    imageAlt: "Radhika website designed and developed by 2PixelCraft",
+  },
+  {
     name: "Timect Watches",
     imageSrc: "/projects/timect.png",
     mobileImageSrc: "/projects/timect-mobile.png",
@@ -37,7 +43,7 @@ interface Project {
   imageSrc: `/${string}.png` | `/${string}.svg`;
   mobileImageSrc?: `/${string}.png` | `/${string}.svg`;
   imageAlt: string;
-  liveUrl: `https://${string}`;
+  liveUrl?: `https://${string}`;
 }
 
 function ProjectCard({
@@ -60,22 +66,36 @@ function ProjectCard({
         };
   const imageClassName = "object-contain";
 
+  const imageElement = (
+    <Image
+      src={src}
+      alt={project.imageAlt}
+      fill
+      {...imageProps}
+      className={imageClassName}
+    />
+  );
+
+  const containerClassName = "group relative block h-full w-full overflow-hidden rounded-[28px] border border-white bg-white sm:border-gray-200";
+
+  if (project.liveUrl) {
+    return (
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Open ${project.name} website`}
+        className={containerClassName}
+      >
+        {imageElement}
+      </a>
+    );
+  }
+
   return (
-    <a
-      href={project.liveUrl}
-      target="_blank"
-      rel="noreferrer"
-      aria-label={`Open ${project.name} website`}
-      className="group relative block h-full w-full overflow-hidden rounded-[28px] border border-white bg-white sm:border-gray-200"
-    >
-      <Image
-        src={src}
-        alt={project.imageAlt}
-        fill
-        {...imageProps}
-        className={imageClassName}
-      />
-    </a>
+    <div className={containerClassName}>
+      {imageElement}
+    </div>
   );
 }
 
