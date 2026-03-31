@@ -1,0 +1,28 @@
+# 2PixelCraft
+
+2PixelCraft is a premier digital agency specializing in high-performance web design, mobile app development, and custom software solutions for local businesses. Based in Rajkot, India, we offer fast delivery, clear communication, and dependable execution to help businesses grow through technology.
+
+## Core Services
+- **Website Design & Development**: Custom, high-converting websites built with modern technologies like Next.js and React.
+- **Mobile App Development**: Native and cross-platform mobile applications for iOS and Android.
+- **Custom Software Solutions**: Tailored business automation tools, SaaS products, and digital transformation services.
+- **UI/UX Design**: User-centric design focused on conversion and ease of use.
+- **Tech Consulting**: Strategic advice for businesses looking to modernize their tech stack.
+
+## Key Differentiators
+- **Fast Delivery**: We prioritize speed without compromising quality.
+- **Clear Communication**: No jargon, just results and transparency.
+- **Dependable Execution**: We stay with you from idea to launch and beyond.
+- **Local Business Focus**: Specialized in helping small and medium-sized businesses grow.
+
+## Contact Information
+- **Website**: https://www.2pixelcraft.com
+- **Email**: taman@2pixelcraft.com
+- **Phone**: +91 94094 26773
+- **Location**: Rajkot, Gujarat, India
+
+## Technical Stack Expertise
+- Frontend: Next.js, React, TypeScript, Tailwind CSS
+- Backend: Node.js, Express, PostgreSQL, MongoDB
+- Mobile: React Native, Flutter
+- Cloud: Vercel, AWS, Google Cloud

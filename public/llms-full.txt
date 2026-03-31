@@ -1,0 +1,51 @@
+# 2PixelCraft - Full Information
+
+2PixelCraft is a premier digital agency specializing in high-performance web design, mobile app development, and custom software solutions for local businesses. Based in Rajkot, India, we offer fast delivery, clear communication, and dependable execution to help businesses grow through technology.
+
+## Who We Are
+2PixelCraft was founded with a simple goal: to help businesses launch faster and grow with dependable execution. We understand the challenges local businesses face when trying to modernize their technology, and we bridge that gap with clear communication and fast, high-quality delivery.
+
+## Our Approach
+- **Discovery**: We start by understanding your business goals, not just the technical requirements.
+- **Design**: We create custom designs that are not only beautiful but also optimized for user experience and conversion.
+- **Development**: Our tech stack (Next.js, React, TypeScript) ensures your project is fast, secure, and scalable.
+- **Delivery**: We don't just "hand over" the code; we help you launch and ensure everything is running perfectly.
+- **Support**: We stay with you after launch to fix problems, make updates, and help your business keep growing.
+
+## Detailed Services
+
+### Website Design & Development
+- **Custom Landing Pages**: High-converting pages for marketing campaigns.
+- **E-commerce Solutions**: Robust online stores built to sell.
+- **Corporate Websites**: Professional digital presence for established businesses.
+- **Next.js & React Specialists**: Experts in the latest web technologies.
+
+### Mobile App Development
+- **iOS & Android Apps**: Native-quality apps using React Native and Flutter.
+- **Progressive Web Apps (PWAs)**: Websites that work like mobile apps.
+- **App Store Optimization (ASO)**: Helping your app get discovered.
+
+### Custom Software Solutions
+- **Business Automation**: Tools that save you hours of manual work.
+- **SaaS Development**: Building software-as-a-service products from scratch.
+- **API Development & Integration**: Connecting your systems for better workflow.
+- **Digital Transformation**: Modernizing legacy business processes.
+
+## Why Choose 2PixelCraft?
+- **Fast Delivery**: We understand that in business, time is money.
+- **Clear Communication**: We explain tech in a way that makes sense for business owners.
+- **Dependable Execution**: We do what we say we're going to do, when we say we're going to do it.
+- **Based in India**: Offering world-class quality at competitive prices, with a focus on Rajkot and Gujarat regions.
+
+## Contact Information
+- **Website**: https://www.2pixelcraft.com
+- **Email**: taman@2pixelcraft.com
+- **Phone**: +91 94094 26773
+- **Address**: Rajkot, Gujarat, India 360001
+- **Working Hours**: Monday to Saturday, 10:00 AM - 7:00 PM (IST)
+
+## Social Media Profiles
+- GitHub: https://github.com/2pixelcraft
+- LinkedIn: https://www.linkedin.com/company/2pixelcraft
+- Twitter: https://twitter.com/2pixelcraft
+- Instagram: https://instagram.com/2pixelcraft

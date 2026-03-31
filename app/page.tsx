@@ -1,4 +1,4 @@
-import { createPageMetadata } from "@/app/seo";
+import { createPageMetadata, siteConfig } from "@/app/seo";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
@@ -10,9 +10,9 @@ import GoodVsGreat from "@/components/GoodVsGreat";
 import Footer from "@/components/Footer";
 
 export const metadata = createPageMetadata({
-  description:
-    "2PixelCraft builds websites, apps, and custom software for local businesses that want faster delivery, clear communication, and dependable execution.",
+  description: siteConfig.description,
   path: "/",
+  keywords: ["best web design agency in Rajkot", "2PixelCraft app development", "custom software solutions India"],
 });
 
 export default function Home() {
