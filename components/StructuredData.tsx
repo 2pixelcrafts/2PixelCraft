@@ -5,10 +5,17 @@ const StructuredData = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteConfig.url}/#organization`,
     "name": siteConfig.name,
+    "alternateName": ["2pixelcraft", "2pixel craft", "2 PixelCraft", "Two Pixel Craft"],
     "legalName": siteConfig.legalName,
     "url": siteConfig.url,
-    "logo": `${siteConfig.url}/logo.png`,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteConfig.url}/logo.png`,
+      "width": 512,
+      "height": 512
+    },
     "description": siteConfig.description,
     "email": siteConfig.email,
     "telephone": siteConfig.phone,
@@ -30,7 +37,9 @@ const StructuredData = () => {
   const professionalService = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": `${siteConfig.url}/#professionalservice`,
     "name": siteConfig.name,
+    "alternateName": ["2pixelcraft", "2pixel craft"],
     "url": siteConfig.url,
     "logo": `${siteConfig.url}/og-image.png`,
     "image": `${siteConfig.url}/og-image.png`,
@@ -80,15 +89,14 @@ const StructuredData = () => {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
     "name": siteConfig.name,
+    "alternateName": ["2pixelcraft", "2pixel craft"],
     "url": siteConfig.url,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${siteConfig.url}/?s={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
+    "description": siteConfig.description,
+    "inLanguage": "en-US",
+    "publisher": {
+      "@id": `${siteConfig.url}/#organization`
     }
   };
 

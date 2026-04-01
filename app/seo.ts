@@ -14,6 +14,11 @@ export const siteConfig = {
   country: "India",
   keywords: [
     "2PixelCraft",
+    "2pixelcraft",
+    "2pixel craft",
+    "2PixelCraft official website",
+    "2PixelCraft Rajkot",
+    "2PixelCraft agency",
     "2PixelCraft IT Company",
     "Best web development agency in Rajkot",
     "Custom software development India",

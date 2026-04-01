@@ -12,7 +12,16 @@ import Footer from "@/components/Footer";
 export const metadata = createPageMetadata({
   description: siteConfig.description,
   path: "/",
-  keywords: ["best web design agency in Rajkot", "2PixelCraft app development", "custom software solutions India"],
+  keywords: [
+    "2PixelCraft",
+    "2pixelcraft",
+    "2pixel craft",
+    "2PixelCraft official website",
+    "2PixelCraft web design agency",
+    "2PixelCraft app development",
+    "best web design agency in Rajkot",
+    "custom software solutions India",
+  ],
 });
 
 export default function Home() {
