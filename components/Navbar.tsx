@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { label: "Featured Projects", href: "/#projects" },
+  { label: "Featured Projects", href: "/projects" },
   { label: "Why 2PixelCraft", href: "/#about" },
 ];
 

@@ -2,271 +2,124 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { createPageMetadata, siteConfig } from "@/app/seo";
+import { categories, techs, getTechsByCategory } from "@/app/technologies/data";
 
 export const metadata = createPageMetadata({
-  title: "Technologies We Build With",
+  title: "Technologies We Use — React, Next.js, Laravel, Flutter & More",
   description:
-    "From React and Next.js to Laravel, Flutter, and Node.js — explore the full stack of technologies 2PixelCraft uses to build fast, scalable, and production-ready digital products.",
+    "2PixelCraft builds websites, apps, and software using React.js, Next.js, Node.js, Laravel, Flutter, and more. Explore our full tech stack and see how we deliver fast, scalable digital products for businesses in India.",
   path: "/technologies",
   keywords: [
-    "React.js development agency India",
-    "Next.js web development Rajkot",
-    "Node.js backend development",
-    "Laravel development India",
-    "Flutter app development agency",
-    "full stack development agency India",
-    "TypeScript development agency",
-    "React Native app development",
-    "custom software stack India",
     "2PixelCraft tech stack",
+    "React.js development agency Rajkot",
+    "Next.js development company India",
+    "Node.js backend development India",
+    "Laravel development agency Rajkot",
+    "Flutter app development India",
+    "React Native app development agency",
+    "TypeScript development India",
+    "full stack web development Rajkot",
+    "custom software development India",
+    "web development technologies used",
+    "best web development tech stack India",
+    "mobile app development Flutter India",
+    "PHP Laravel agency India",
+    "MongoDB PostgreSQL MySQL development",
+    "Tailwind CSS Next.js agency",
+    "2PixelCraft React development",
+    "2PixelCraft Flutter development",
+    "2PixelCraft Laravel projects",
+    "agency tech stack India 2025",
   ],
 });
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Technologies We Build With | 2PixelCraft",
-  description:
-    "The complete technology stack used by 2PixelCraft — React, Next.js, Node.js, Laravel, Flutter, and more.",
-  url: `${siteConfig.url}/technologies`,
-  publisher: {
-    "@type": "Organization",
-    name: siteConfig.name,
-    url: siteConfig.url,
-  },
-};
-
-type Tech = {
-  name: string;
-  abbr: string;
-  description: string;
-  color: string;
-};
-
-type Category = {
-  id: string;
-  index: string;
-  label: string;
-  tagline: string;
-  description: string;
-  techs: Tech[];
-};
-
-const categories: Category[] = [
+const faqItems = [
   {
-    id: "frontend",
-    index: "01",
-    label: "Frontend",
-    tagline: "Interfaces that feel as good as they look.",
-    description:
-      "We craft fast, accessible UIs that convert — using the best tools the modern web has to offer.",
-    techs: [
-      {
-        name: "React.js",
-        abbr: "Re",
-        description:
-          "Component-driven UIs with a rich ecosystem and blazing-fast rendering — the backbone of every modern web app we build.",
-        color: "#61DAFB",
-      },
-      {
-        name: "Next.js",
-        abbr: "Nx",
-        description:
-          "Full-stack React framework with SSR, SSG, and edge-ready routing. Our default choice for production websites.",
-        color: "#ffffff",
-      },
-      {
-        name: "TypeScript",
-        abbr: "TS",
-        description:
-          "Typed JavaScript that catches bugs at build time, not in production. Every project we ship is TypeScript-first.",
-        color: "#3178C6",
-      },
-      {
-        name: "Tailwind CSS",
-        abbr: "TW",
-        description:
-          "Utility-first CSS that lets us build pixel-precise, fully responsive designs without leaving the markup.",
-        color: "#38BDF8",
-      },
-      {
-        name: "HTML & CSS",
-        abbr: "HC",
-        description:
-          "Semantic, accessible markup paired with clean, modern CSS — the foundation everything else is built on.",
-        color: "#E34F26",
-      },
-    ],
+    q: "Does 2PixelCraft build websites using React.js and Next.js?",
+    a: "Yes. React.js and Next.js are at the core of every website and web app 2PixelCraft builds. We use Next.js for its performance advantages — server-side rendering, static generation, and edge-ready routing — ensuring every site we deliver is fast, SEO-friendly, and production-grade.",
   },
   {
-    id: "backend",
-    index: "02",
-    label: "Backend",
-    tagline: "Reliable APIs and server logic that scale.",
-    description:
-      "From lightweight REST APIs to complex enterprise systems — we choose the right server stack for your use case.",
-    techs: [
-      {
-        name: "Node.js",
-        abbr: "No",
-        description:
-          "Event-driven JavaScript runtime built for fast, scalable server-side applications and real-time systems.",
-        color: "#5FA04E",
-      },
-      {
-        name: "Express.js",
-        abbr: "Ex",
-        description:
-          "Minimal, unopinionated Node.js framework — our go-to for building clean, well-structured REST APIs.",
-        color: "#ffffff",
-      },
-      {
-        name: "Laravel",
-        abbr: "La",
-        description:
-          "Elegant PHP framework with a powerful toolset for building enterprise-grade applications with speed.",
-        color: "#FF2D20",
-      },
-      {
-        name: "PHP",
-        abbr: "Ph",
-        description:
-          "Battle-tested, server-side scripting language — powering a significant portion of the modern web.",
-        color: "#7A86B8",
-      },
-      {
-        name: "REST APIs",
-        abbr: "AP",
-        description:
-          "Clean, versioned API design — the connective tissue between your frontend, mobile app, and third-party services.",
-        color: "#10B981",
-      },
-    ],
+    q: "Can 2PixelCraft develop a mobile app using Flutter?",
+    a: "Absolutely. 2PixelCraft builds cross-platform mobile applications using Flutter and Dart. Flutter allows us to deliver native-quality iOS and Android apps from a single codebase, which means faster delivery and lower cost without compromising on performance or design.",
   },
   {
-    id: "mobile",
-    index: "03",
-    label: "Mobile",
-    tagline: "Native-quality apps for iOS & Android.",
-    description:
-      "One codebase, two platforms, zero compromise on performance or user experience.",
-    techs: [
-      {
-        name: "Flutter",
-        abbr: "Fl",
-        description:
-          "Google's cross-platform SDK — delivers truly native performance on both iOS and Android from a single codebase.",
-        color: "#54C5F8",
-      },
-      {
-        name: "React Native",
-        abbr: "RN",
-        description:
-          "Build native mobile apps using React — leverage existing web expertise to ship mobile products faster.",
-        color: "#61DAFB",
-      },
-      {
-        name: "Dart",
-        abbr: "Da",
-        description:
-          "Optimised, strongly-typed language that powers Flutter's performance — compiles to native ARM code.",
-        color: "#0175C2",
-      },
-    ],
+    q: "Does 2PixelCraft work with Laravel and PHP?",
+    a: "Yes. Laravel is 2PixelCraft's primary choice for complex backend systems and enterprise-grade web applications. We use it for projects that require robust authentication, queuing, API development, and database management — particularly for local businesses across India.",
   },
   {
-    id: "database",
-    index: "04",
-    label: "Databases",
-    tagline: "Data stored, structured, and retrieved with precision.",
-    description:
-      "We match the database to the data — not the other way around.",
-    techs: [
-      {
-        name: "MySQL",
-        abbr: "My",
-        description:
-          "The world's most popular open-source relational database — reliable, well-supported, and battle-hardened.",
-        color: "#00758F",
-      },
-      {
-        name: "PostgreSQL",
-        abbr: "Pg",
-        description:
-          "Advanced open-source relational database with powerful querying, JSON support, and high reliability.",
-        color: "#336791",
-      },
-      {
-        name: "MongoDB",
-        abbr: "Mg",
-        description:
-          "Document-oriented NoSQL for flexible, schema-less data modelling — ideal for rapidly evolving data structures.",
-        color: "#47A248",
-      },
-      {
-        name: "Firebase",
-        abbr: "Fb",
-        description:
-          "Google's realtime database and backend-as-a-service platform — perfect for rapid mobile and web development.",
-        color: "#FFCA28",
-      },
-      {
-        name: "Prisma",
-        abbr: "Pr",
-        description:
-          "Next-gen ORM for Node.js and TypeScript — type-safe database access that eliminates an entire class of runtime errors.",
-        color: "#5A67D8",
-      },
-    ],
+    q: "What backend technology does 2PixelCraft use for Node.js projects?",
+    a: "2PixelCraft uses Node.js with Express.js to build scalable REST APIs and server-side applications. Node's event-driven architecture makes it ideal for real-time features, high-concurrency systems, and projects where the frontend and backend share JavaScript or TypeScript.",
   },
   {
-    id: "tools",
-    index: "05",
-    label: "Tools & Platforms",
-    tagline: "The infrastructure behind every delivery.",
-    description:
-      "The tools we use to build, ship, iterate, and maintain — reliably, every single time.",
-    techs: [
-      {
-        name: "Git & GitHub",
-        abbr: "Gh",
-        description:
-          "Version control and collaborative code management — every project is tracked, every change is recoverable.",
-        color: "#F05032",
-      },
-      {
-        name: "Docker",
-        abbr: "Do",
-        description:
-          "Containerised environments for consistent, reproducible builds — dev, staging, and production all stay in sync.",
-        color: "#2496ED",
-      },
-      {
-        name: "Vercel",
-        abbr: "Ve",
-        description:
-          "Zero-config deployment platform built for Next.js — instant rollouts, edge caching, and preview deployments.",
-        color: "#ffffff",
-      },
-      {
-        name: "AWS",
-        abbr: "AW",
-        description:
-          "Cloud infrastructure for hosting, storage, serverless functions, and the scale that enterprise projects demand.",
-        color: "#FF9900",
-      },
-      {
-        name: "Figma",
-        abbr: "Fi",
-        description:
-          "Collaborative design tool for wireframes, prototypes, and production-ready UI handoffs — where every project begins.",
-        color: "#F24E1E",
-      },
-    ],
+    q: "Which databases does 2PixelCraft use?",
+    a: "2PixelCraft works with MySQL, PostgreSQL, MongoDB, and Firebase depending on the project's data requirements. For relational data we prefer PostgreSQL; for document-based or real-time needs we use MongoDB or Firebase. We use Prisma as our ORM on TypeScript projects for type-safe database access.",
+  },
+  {
+    q: "Is 2PixelCraft a full-stack development agency?",
+    a: "Yes. 2PixelCraft is a full-stack digital agency based in Rajkot, India. We handle the complete product lifecycle — from UI/UX design in Figma, to frontend development in React/Next.js, backend in Node.js or Laravel, mobile in Flutter, and deployment on Vercel or AWS.",
+  },
+  {
+    q: "Does 2PixelCraft use TypeScript for development?",
+    a: "Yes, TypeScript is our default for all JavaScript projects. Using TypeScript across the stack — from Next.js frontends to Node.js backends — lets us catch errors at build time, write self-documenting code, and deliver software that's easier to maintain long-term.",
+  },
+  {
+    q: "What tools does 2PixelCraft use for UI/UX design?",
+    a: "2PixelCraft uses Figma for all UI/UX design work — wireframes, interactive prototypes, design systems, and final production-ready handoffs. Every project starts in Figma before a single line of code is written, ensuring the final product matches the design precisely.",
   },
 ];
 
-const allTechs = categories.flatMap((c) => c.techs);
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Technologies",
+        item: `${siteConfig.url}/technologies`,
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Technologies 2PixelCraft Uses — React, Next.js, Laravel, Flutter & More",
+    description:
+      "Explore the complete technology stack 2PixelCraft uses to build websites, mobile apps, and custom software for businesses across India.",
+    url: `${siteConfig.url}/technologies`,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Technologies Used by 2PixelCraft",
+    description:
+      "The full stack of programming languages, frameworks, and platforms used by 2PixelCraft to build digital products.",
+    url: `${siteConfig.url}/technologies`,
+    numberOfItems: techs.length,
+    itemListElement: techs.map((t, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: t.name,
+      url: `${siteConfig.url}/technologies/${t.slug}`,
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  },
+];
 
 export default function TechnologiesPage() {
   return (
@@ -287,17 +140,20 @@ export default function TechnologiesPage() {
         }
       `}</style>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+
       <Navbar />
 
       <main className="bg-[#0f0f0f] min-h-screen">
 
         {/* ── Hero ── */}
         <section className="relative pt-36 pb-20 px-6 lg:px-10 overflow-hidden">
-          {/* Diagonal stripe texture (matches site's own Hero) */}
           <div
             className="absolute inset-0 opacity-[0.03] pointer-events-none"
             style={{
@@ -305,39 +161,36 @@ export default function TechnologiesPage() {
                 "repeating-linear-gradient(-55deg, transparent, transparent 40px, rgba(255,255,255,1) 40px, rgba(255,255,255,1) 41px)",
             }}
           />
-          {/* Blue glow blob */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-blue-600/15 blur-[100px] pointer-events-none" />
 
           <div className="relative max-w-4xl mx-auto text-center">
             <span className="inline-block font-poppins text-xs uppercase tracking-[0.2em] text-blue-400 mb-4">
-              Our Tech Stack
+              2PixelCraft Tech Stack
             </span>
             <h1 className="font-unbounded font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
-              Built With the{" "}
+              Technologies We{" "}
               <span className="relative inline-block">
-                Right Tools
+                Build With
                 <span className="absolute -bottom-1 left-0 right-0 h-1 bg-blue-500 rounded-full" />
               </span>
             </h1>
             <p className="mt-6 font-poppins text-base sm:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              We don&apos;t chase trends — we choose proven technologies that
-              deliver. Every tool in our stack is selected for performance,
+              From React and Next.js to Laravel, Flutter, and Node.js —
+              2PixelCraft uses a proven, production-tested stack to build
+              websites, mobile apps, and custom software for businesses across
+              India. Every technology we use is chosen for performance,
               reliability, and long-term maintainability.
             </p>
 
             <div className="mt-12 flex flex-wrap justify-center gap-10">
               {[
-                { value: `${allTechs.length}+`, label: "Technologies" },
+                { value: `${techs.length}+`, label: "Technologies" },
                 { value: `${categories.length}`, label: "Disciplines" },
-                { value: "1", label: "Goal — Your Growth" },
+                { value: "100%", label: "Production-Tested" },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center">
-                  <p className="font-unbounded font-bold text-3xl text-white">
-                    {value}
-                  </p>
-                  <p className="font-poppins text-sm text-gray-500 mt-1">
-                    {label}
-                  </p>
+                  <p className="font-unbounded font-bold text-3xl text-white">{value}</p>
+                  <p className="font-poppins text-sm text-gray-500 mt-1">{label}</p>
                 </div>
               ))}
             </div>
@@ -346,9 +199,8 @@ export default function TechnologiesPage() {
 
         {/* ── Marquee Strip ── */}
         <div className="relative border-y border-white/[0.06] py-4 overflow-hidden bg-[#0a0a0a]">
-          <div className="marquee-track select-none">
-            {/* Two full copies for a seamless loop */}
-            {[...allTechs, ...allTechs].map((tech, i) => (
+          <div className="marquee-track select-none" aria-hidden="true">
+            {[...techs, ...techs].map((tech, i) => (
               <span
                 key={i}
                 className="inline-flex items-center gap-3 mx-6 font-unbounded text-sm font-medium whitespace-nowrap"
@@ -366,49 +218,78 @@ export default function TechnologiesPage() {
         {/* ── Category Sections ── */}
         <section className="px-6 lg:px-10 py-8">
           <div className="max-w-6xl mx-auto">
-            {categories.map((cat) => (
-              <div
-                key={cat.id}
-                className="group/cat border-b border-white/[0.06] last:border-b-0 py-20 lg:grid lg:grid-cols-12 lg:gap-16"
-              >
-                {/* ── Left: sticky category info ── */}
-                <div className="lg:col-span-4 mb-14 lg:mb-0">
-                  <div className="lg:sticky lg:top-28">
-                    {/* Large faded index */}
-                    <span className="font-unbounded font-bold text-[clamp(5rem,10vw,8rem)] leading-none text-white/[0.04] select-none block -ml-1 -mt-4 mb-2">
-                      {cat.index}
-                    </span>
+            {categories.map((cat) => {
+              const catTechs = getTechsByCategory(cat.id);
+              return (
+                <div
+                  key={cat.id}
+                  className="border-b border-white/[0.06] last:border-b-0 py-20 lg:grid lg:grid-cols-12 lg:gap-16"
+                >
+                  {/* Left: sticky category info */}
+                  <div className="lg:col-span-4 mb-14 lg:mb-0">
+                    <div className="lg:sticky lg:top-28">
+                      <span className="font-unbounded font-bold text-[clamp(5rem,10vw,8rem)] leading-none text-white/[0.04] select-none block -ml-1 -mt-4 mb-2">
+                        {cat.index}
+                      </span>
+                      <span className="font-poppins text-xs uppercase tracking-[0.2em] text-blue-400">
+                        {cat.label}
+                      </span>
+                      <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-white mt-2 leading-snug">
+                        {cat.tagline}
+                      </h2>
+                      <p className="mt-3 font-poppins text-sm text-gray-500 leading-relaxed max-w-xs">
+                        {cat.description}
+                      </p>
+                      <div className="mt-6 inline-flex items-center gap-2 font-poppins text-xs text-gray-600 border border-white/[0.07] rounded-full px-3 py-1.5">
+                        <span
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{ backgroundColor: catTechs[0]?.color }}
+                        />
+                        {catTechs.length} technologies
+                      </div>
+                    </div>
+                  </div>
 
-                    <span className="font-poppins text-xs uppercase tracking-[0.2em] text-blue-400">
-                      {cat.label}
-                    </span>
-                    <h2 className="font-unbounded font-bold text-xl sm:text-2xl text-white mt-2 leading-snug">
-                      {cat.tagline}
-                    </h2>
-                    <p className="mt-3 font-poppins text-sm text-gray-500 leading-relaxed max-w-xs">
-                      {cat.description}
-                    </p>
-
-                    <div className="mt-6 inline-flex items-center gap-2 font-poppins text-xs text-gray-600 border border-white/[0.07] rounded-full px-3 py-1.5">
-                      <span
-                        className="w-1.5 h-1.5 rounded-full"
-                        style={{ backgroundColor: cat.techs[0].color }}
-                      />
-                      {cat.techs.length} technologies
+                  {/* Right: tech rows */}
+                  <div className="lg:col-span-8">
+                    <div className="space-y-1">
+                      {catTechs.map((tech, ti) => (
+                        <TechRow key={tech.slug} tech={tech} index={ti} />
+                      ))}
                     </div>
                   </div>
                 </div>
+              );
+            })}
+          </div>
+        </section>
 
-                {/* ── Right: tech rows ── */}
-                <div className="lg:col-span-8">
-                  <div className="space-y-1">
-                    {cat.techs.map((tech, ti) => (
-                      <TechRow key={tech.name} tech={tech} index={ti} />
-                    ))}
-                  </div>
+        {/* ── FAQ Section ── */}
+        <section className="px-6 lg:px-10 py-20 border-t border-white/[0.07]">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-14">
+              <span className="inline-block font-poppins text-xs uppercase tracking-[0.2em] text-blue-400 mb-3">
+                Common Questions
+              </span>
+              <h2 className="font-unbounded font-bold text-3xl sm:text-4xl text-white leading-tight">
+                Your stack questions, answered.
+              </h2>
+              <p className="mt-4 font-poppins text-gray-500 text-base leading-relaxed">
+                Everything clients ask before working with 2PixelCraft on a new project.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {faqItems.map(({ q, a }, i) => (
+                <div
+                  key={i}
+                  className="bg-[#141414] border border-white/[0.07] rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-200"
+                >
+                  <h3 className="font-poppins font-semibold text-white text-base leading-snug">{q}</h3>
+                  <p className="mt-3 font-poppins text-sm text-gray-500 leading-relaxed">{a}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
@@ -416,32 +297,30 @@ export default function TechnologiesPage() {
         <section className="px-6 lg:px-10 py-24 border-t border-white/[0.07]">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-unbounded font-bold text-3xl sm:text-4xl text-white">
-              Don&apos;t see your stack?
+              Ready to build something?
             </h2>
             <p className="mt-4 font-poppins text-gray-400 text-base sm:text-lg leading-relaxed">
-              We adapt to your existing infrastructure. If you have a specific
-              technology requirement, let&apos;s talk — we&apos;ll find the
-              right solution together.
+              Whether it&apos;s a React website, a Flutter app, or a Laravel
+              backend — 2PixelCraft has the stack and the experience to deliver
+              it. Book a free call and let&apos;s talk about your project.
             </p>
-            <Link
-              href="/#book-call"
-              className="mt-8 inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold font-poppins text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
-            >
-              Book a Free Call
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/#book-call"
+                className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold font-poppins text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </Link>
+                Book a Free Call
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 text-gray-300 hover:text-white font-poppins font-medium text-sm border border-white/20 hover:border-white/50 px-8 py-3.5 rounded-full transition-all duration-200"
+              >
+                See Our Work
+              </Link>
+            </div>
           </div>
         </section>
       </main>
@@ -451,23 +330,26 @@ export default function TechnologiesPage() {
   );
 }
 
-/* ─── Tech Row ───────────────────────────────────────────── */
+/* ─── Tech Row ────────────────────────────────────────────── */
 
-function TechRow({ tech, index }: { tech: Tech; index: number }) {
+type TechType = (typeof techs)[number];
+
+function TechRow({ tech, index }: { tech: TechType; index: number }) {
   return (
-    <div className="group/row relative flex items-start gap-5 px-5 py-5 rounded-2xl hover:bg-white/[0.03] transition-colors duration-200 cursor-default">
-      {/* Left: index + color dot */}
+    <Link
+      href={`/technologies/${tech.slug}`}
+      className="group/row relative flex items-start gap-5 px-5 py-5 rounded-2xl hover:bg-white/[0.03] transition-colors duration-200"
+    >
       <div className="flex-shrink-0 flex flex-col items-center gap-2 pt-0.5">
         <span className="font-poppins text-[10px] text-white/20 tabular-nums w-4 text-center">
           {String(index + 1).padStart(2, "0")}
         </span>
         <span
-          className="w-2 h-2 rounded-full transition-all duration-300 group-hover/row:scale-125 group-hover/row:shadow-[0_0_10px_currentColor]"
-          style={{ backgroundColor: tech.color, color: tech.color }}
+          className="w-2 h-2 rounded-full transition-all duration-300 group-hover/row:scale-125"
+          style={{ backgroundColor: tech.color }}
         />
       </div>
 
-      {/* Center: name + description */}
       <div className="flex-1 min-w-0">
         <h3 className="font-unbounded font-semibold text-[15px] text-white leading-tight">
           {tech.name}
@@ -477,23 +359,17 @@ function TechRow({ tech, index }: { tech: Tech; index: number }) {
         </p>
       </div>
 
-      {/* Right: abbr badge — appears on hover */}
-      <div
-        className="flex-shrink-0 self-center w-9 h-9 rounded-xl flex items-center justify-center font-unbounded font-bold text-xs opacity-0 group-hover/row:opacity-100 transition-all duration-200 translate-x-2 group-hover/row:translate-x-0"
-        style={{
-          backgroundColor: `${tech.color}14`,
-          color: tech.color,
-          border: `1px solid ${tech.color}28`,
-        }}
-      >
-        {tech.abbr}
+      {/* Arrow — appears on hover */}
+      <div className="flex-shrink-0 self-center opacity-0 group-hover/row:opacity-100 transition-all duration-200 translate-x-2 group-hover/row:translate-x-0">
+        <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
       </div>
 
-      {/* Subtle left glow line on hover */}
       <div
         className="absolute left-0 top-3 bottom-3 w-[2px] rounded-full opacity-0 group-hover/row:opacity-100 transition-opacity duration-300"
         style={{ backgroundColor: tech.color }}
       />
-    </div>
+    </Link>
   );
 }

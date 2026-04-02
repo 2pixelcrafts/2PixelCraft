@@ -100,6 +100,44 @@ const StructuredData = () => {
     }
   };
 
+  const navigationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Main Navigation",
+    "itemListElement": [
+      {
+        "@type": "SiteNavigationElement",
+        "position": 1,
+        "name": "Home",
+        "url": siteConfig.url
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 2,
+        "name": "Projects",
+        "url": `${siteConfig.url}/projects`
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 3,
+        "name": "Technologies",
+        "url": `${siteConfig.url}/technologies`
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 4,
+        "name": "Locations",
+        "url": `${siteConfig.url}/locations`
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 5,
+        "name": "Contact",
+        "url": `${siteConfig.url}/contact`
+      }
+    ]
+  };
+
   return (
     <>
       <script
@@ -113,6 +151,10 @@ const StructuredData = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(navigationSchema) }}
       />
     </>
   );
