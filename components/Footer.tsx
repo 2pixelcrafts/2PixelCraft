@@ -5,7 +5,7 @@ import { siteConfig } from "@/app/seo";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Featured Projects", href: "/#projects" },
+  { label: "Projects", href: "/projects" },
   { label: "Book a Call", href: "/#book-call" },
   { label: "Why 2PixelCraft", href: "/#about" },
 ];

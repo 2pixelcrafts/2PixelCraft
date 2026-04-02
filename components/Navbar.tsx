@@ -48,7 +48,7 @@ export default function Navbar() {
               src="/transparent website logo.png"
               alt="2PixelCraft - Web Design & App Development Agency logo"
               width={2547}
-              height={631}
+              height={600}
               priority
               className="h-auto w-[140px] sm:w-[170px] md:w-[200px]"
             />

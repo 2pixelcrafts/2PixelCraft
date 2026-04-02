@@ -343,6 +343,12 @@ const ScrollStack = ({
         {
           '--scroll-stack-top-padding':
             typeof stackPosition === 'number' ? `${stackPosition}px` : stackPosition,
+          // When window handles scrolling the scroller div must not be a scroll
+          // container — overflow:auto on a height:100% child of an auto-height
+          // parent causes the inner min-height:100vh content to overflow it,
+          // producing a ghost scrollbar that appears/disappears as cards stack
+          // and triggers layout thrash + flicker on the last card.
+          ...(useWindowScroll && { overflow: 'visible' }),
         } as CSSProperties
       }
     >
