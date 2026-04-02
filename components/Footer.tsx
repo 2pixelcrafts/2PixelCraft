@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Projects", href: "/projects" },
+  { label: "Technologies", href: "/technologies" },
   { label: "Book a Call", href: "/#book-call" },
   { label: "Why 2PixelCraft", href: "/#about" },
 ];
