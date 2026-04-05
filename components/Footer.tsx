@@ -14,7 +14,7 @@ const footerLinks = {
     { label: "Service Areas", href: "/locations" },
     { label: "Contact Us", href: "/contact" },
   ],
-  technologies: techs.slice(0, 6).map(t => ({ label: `${t.name} Dev`, href: `/technologies/${t.slug}` })),
+  technologies: techs.slice(0, 5).map(t => ({ label: `${t.name} Dev`, href: `/technologies/${t.slug}` })),
   locations: featuredCities.slice(0, 6).map(c => ({ label: `IT in ${c.name}`, href: `/locations/${c.slug}` })),
 };
 
@@ -29,7 +29,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] border-t border-white/[0.05] pt-20 pb-10 px-6 lg:px-10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-15">
           
           {/* Brand Column */}
           <div className="lg:col-span-4">
@@ -42,11 +42,24 @@ export default function Footer() {
                 className="h-auto w-[150px] brightness-110"
               />
             </Link>
-            <p className="text-gray-500 font-poppins text-sm leading-relaxed max-w-sm mb-8">
-              Building high-performance digital products for local businesses 
-              and global startups. From Rajkot to the world, we engineering 
+            <p className="text-gray-500 font-poppins text-sm leading-relaxed max-w-sm mb-6">
+              Building high-performance digital products for local businesses
+              and global startups. From Rajkot to the world, we engineering
               excellence into every pixel.
             </p>
+            {/* NAP — Name / Address / Phone (Local SEO signal) */}
+            <address className="not-italic mb-8 space-y-1">
+              <p className="font-poppins text-xs text-gray-600">
+                <span className="font-semibold text-gray-500">2PixelCraft</span>
+              </p>
+              <p className="font-poppins text-xs text-gray-600">Rajkot, Gujarat 360001, India</p>
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="font-poppins text-xs text-gray-600 hover:text-blue-400 transition-colors"
+              >
+                {siteConfig.phoneDisplay}
+              </a>
+            </address>
             <div className="flex gap-4">
               {contactLinks.map((link) => (
                 <a 

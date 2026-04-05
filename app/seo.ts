@@ -91,7 +91,7 @@ export function createPageMetadata({
       locale: siteConfig.locale,
       images: [
         {
-          url: "/og-image.png",
+          url: "/opengraph-image",
           width: 1200,
           height: 630,
           alt: siteConfig.name,
@@ -102,7 +102,7 @@ export function createPageMetadata({
       card: "summary_large_image",
       title: pageTitle,
       description,
-      images: ["/og-image.png"],
+      images: ["/twitter-image"],
     },
     robots: noIndex
       ? {

@@ -1,6 +1,8 @@
 # Allow all search engines
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
 # Explicitly allow AI crawlers
 User-agent: GPTBot

@@ -167,8 +167,9 @@ export default function ContactPage() {
                 <input type="checkbox" name="botcheck" className="hidden" />
                 <input type="hidden" name="subject" value="New Project Inquiry - 2PixelCraft" />
 
-                <Field label="Name">
+                <Field label="Name" htmlFor="contact-name">
                   <input
+                    id="contact-name"
                     name="name"
                     type="text"
                     required
@@ -177,8 +178,9 @@ export default function ContactPage() {
                   />
                 </Field>
 
-                <Field label="Email Address">
+                <Field label="Email Address" htmlFor="contact-email">
                   <input
+                    id="contact-email"
                     name="email"
                     type="email"
                     required
@@ -187,8 +189,9 @@ export default function ContactPage() {
                   />
                 </Field>
 
-                <Field label="Phone">
+                <Field label="Phone" htmlFor="contact-phone">
                   <input
+                    id="contact-phone"
                     name="phone"
                     type="tel"
                     placeholder="+1 234 567 8900"
@@ -196,8 +199,9 @@ export default function ContactPage() {
                   />
                 </Field>
 
-                <Field label="Subject">
+                <Field label="Subject" htmlFor="contact-subject">
                   <input
+                    id="contact-subject"
                     name="subject_line"
                     type="text"
                     required
@@ -206,8 +210,9 @@ export default function ContactPage() {
                   />
                 </Field>
 
-                <Field label="Message">
+                <Field label="Message" htmlFor="contact-message">
                   <textarea
+                    id="contact-message"
                     name="message"
                     required
                     rows={4}
@@ -260,10 +265,10 @@ export default function ContactPage() {
 const inputCls =
   "w-full bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.15] focus:border-[#4F8EF7]/60 focus:bg-white/[0.06] rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none transition-all duration-200 font-poppins";
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({ label, htmlFor, children }: { label: string; htmlFor: string; children: React.ReactNode }) {
   return (
     <div className="space-y-1.5">
-      <label className="block text-xs font-mono uppercase tracking-wider text-white/40">
+      <label htmlFor={htmlFor} className="block text-xs font-mono uppercase tracking-wider text-white/40">
         {label}
       </label>
       {children}

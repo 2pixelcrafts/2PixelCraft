@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { Unbounded, Poppins } from "next/font/google";
+import Script from "next/script";
 import { siteConfig } from "@/app/seo";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import StructuredData from "@/components/StructuredData";
+
+// TODO: Replace with your real GA4 Measurement ID from analytics.google.com
+const GA_MEASUREMENT_ID = "G-RTMK7ZGXTF";
 
 const unbounded = Unbounded({
   subsets: ["latin"],
@@ -50,7 +54,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -61,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: ["/og-image.png"],
+    images: ["/twitter-image"],
   },
   robots: {
     index: true,
@@ -84,6 +88,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${unbounded.variable} ${poppins.variable}`}>
       <body className="bg-[#0f0f0f] text-white font-poppins antialiased">
+        {/* Google Analytics 4 */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
+          `}
+        </Script>
         <StructuredData />
         {children}
         <Analytics />

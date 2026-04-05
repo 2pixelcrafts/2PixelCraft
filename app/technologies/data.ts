@@ -253,43 +253,7 @@ export const techs: Tech[] = [
       },
     ],
   },
-  {
-    slug: "html-css",
-    name: "HTML & CSS",
-    abbr: "HC",
-    color: "#E34F26",
-    categoryId: "frontend",
-    categoryLabel: "Frontend Development",
-    description:
-      "Every 2PixelCraft project is built on semantic, accessible HTML and clean CSS — the foundation that ensures performance, accessibility, and search engine visibility.",
-    metaTitle: "HTML & CSS Web Development in India | 2PixelCraft",
-    metaDescription:
-      "2PixelCraft writes semantic, accessible HTML and clean CSS on every project — the foundation for fast-loading, SEO-friendly, and accessible websites across India.",
-    metaKeywords: [
-      "HTML CSS web development India",
-      "semantic HTML website India",
-      "accessible web design India",
-      "2PixelCraft HTML CSS",
-      "web development Rajkot India",
-    ],
-    headline: "HTML & CSS",
-    subheadline: "Semantic, accessible, and built to last.",
-    body: "Solid HTML and CSS is the foundation of everything 2PixelCraft builds. We write semantic HTML to ensure proper document structure, screen reader accessibility, and maximum crawlability for search engines. Clean, well-organised CSS (or Tailwind utilities) ensures layouts are responsive, consistent across browsers, and performant. It might seem basic, but getting the fundamentals right is what separates websites that rank and convert from those that don't.",
-    useCases: [
-      "Semantic page structure for SEO",
-      "Accessible UI for all users",
-      "Cross-browser compatible layouts",
-      "Email templates",
-      "Static landing pages",
-    ],
-    relatedSlugs: ["react-js", "next-js", "tailwind-css"],
-    faqs: [
-      {
-        q: "Does 2PixelCraft write semantic HTML for SEO?",
-        a: "Yes. Semantic HTML — proper heading hierarchy, landmark elements, structured data, and meaningful alt text — is a core part of 2PixelCraft's development process. It improves both search engine crawlability and accessibility.",
-      },
-    ],
-  },
+
 
   /* ── Backend ───────────────────────────────────── */
   {
@@ -1008,6 +972,46 @@ export const techs: Tech[] = [
       {
         q: "Will I receive the Figma files after the project?",
         a: "Yes. Figma files are included in every project delivery from 2PixelCraft — full ownership, all frames, components, and styles, so your team can extend the design independently in the future.",
+      },
+    ],
+  },
+
+
+
+    {
+    slug: "html-css",
+    name: "HTML & CSS",
+    abbr: "HC",
+  color: "#E34F26",
+    categoryId: "frontend",
+    categoryLabel: "Frontend Development",
+    description:
+      "Every 2PixelCraft project is built on semantic, accessible HTML and clean CSS — the foundation that ensures performance, accessibility, and search engine visibility.",
+    metaTitle: "HTML & CSS Web Development in India | 2PixelCraft",
+    metaDescription:
+      "2PixelCraft writes semantic, accessible HTML and clean CSS on every project — the foundation for fast-loading, SEO-friendly, and accessible websites across India.",
+    metaKeywords: [
+      "HTML CSS web development India",
+      "semantic HTML website India",
+      "accessible web design India",
+      "2PixelCraft HTML CSS",
+      "web development Rajkot India",
+    ],
+    headline: "HTML & CSS",
+    subheadline: "Semantic, accessible, and built to last.",
+    body: "Solid HTML and CSS is the foundation of everything 2PixelCraft builds. We write semantic HTML to ensure proper document structure, screen reader accessibility, and maximum crawlability for search engines. Clean, well-organised CSS (or Tailwind utilities) ensures layouts are responsive, consistent across browsers, and performant. It might seem basic, but getting the fundamentals right is what separates websites that rank and convert from those that don't.",
+    useCases: [
+      "Semantic page structure for SEO",
+      "Accessible UI for all users",
+      "Cross-browser compatible layouts",
+      "Email templates",
+      "Static landing pages",
+    ],
+    relatedSlugs: ["react-js", "next-js", "tailwind-css"],
+    faqs: [
+      {
+        q: "Does 2PixelCraft write semantic HTML for SEO?",
+        a: "Yes. Semantic HTML — proper heading hierarchy, landmark elements, structured data, and meaningful alt text — is a core part of 2PixelCraft's development process. It improves both search engine crawlability and accessibility.",
       },
     ],
   },
