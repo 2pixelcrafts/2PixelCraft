@@ -243,7 +243,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         src={project.imageSrc}
         alt={project.imageAlt}
         fill
-        priority={index < 2}
+        preload={index === 0}
         sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1280px) 90vw, 1024px"
         quality={90}
         className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"

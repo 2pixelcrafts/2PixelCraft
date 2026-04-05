@@ -4,35 +4,35 @@ import Image from "next/image";
 const projects = [
   {
     name: "Lux",
-    imageSrc: "/projects/lux.png",
-    mobileImageSrc: "/projects/lux-mobile.png",
+    imageSrc: "/projects/lux.jpg",
+    mobileImageSrc: "/projects/lux-mobile.jpg",
     imageAlt: "Lux luxury brand website designed and developed by 2PixelCraft",
     liveUrl: "https://luxe.2pixelcraft.com/",
   },
   {
     name: "Radhika",
-    imageSrc: "/projects/radhika.png",
-    mobileImageSrc: "/projects/radhika-mobile.png",
+    imageSrc: "/projects/radhika.jpg",
+    mobileImageSrc: "/projects/radhika-mobile.jpg",
     imageAlt: "Radhika website designed and developed by 2PixelCraft",
   },
   {
     name: "Timect Watches",
-    imageSrc: "/projects/timect.png",
-    mobileImageSrc: "/projects/timect-mobile.png",
+    imageSrc: "/projects/timect.jpg",
+    mobileImageSrc: "/projects/timect-mobile.jpg",
     imageAlt: "Timect Watches e-commerce website designed and developed by 2PixelCraft",
     liveUrl: "https://timectwatches.2pixelcraft.com/",
   },
   {
     name: "Titan Fitness",
-    imageSrc: "/projects/titan-fitness.png",
-    mobileImageSrc: "/projects/titan-mobile.png",
+    imageSrc: "/projects/titan-fitness.jpg",
+    mobileImageSrc: "/projects/titan-mobile.jpg",
     imageAlt: "Titan Fitness gym website designed and developed by 2PixelCraft",
     liveUrl: "https://titan-fitness.2pixelcraft.com/",
   },
   {
     name: "Wistoan",
-    imageSrc: "/projects/wistoan.png",
-    mobileImageSrc: "/projects/wistoan-mobile.png",
+    imageSrc: "/projects/wistoan.jpg",
+    mobileImageSrc: "/projects/wistoan-mobile.jpg",
     imageAlt: "Wistoan luxury watches website designed and developed by 2PixelCraft",
     liveUrl: "https://wistoanwatches.com/",
   },
@@ -40,8 +40,8 @@ const projects = [
 
 interface Project {
   name: string;
-  imageSrc: `/${string}.png` | `/${string}.svg`;
-  mobileImageSrc?: `/${string}.png` | `/${string}.svg`;
+  imageSrc: `/${string}.jpg` | `/${string}.png` | `/${string}.svg`;
+  mobileImageSrc?: `/${string}.jpg` | `/${string}.png` | `/${string}.svg`;
   imageAlt: string;
   liveUrl?: `https://${string}`;
 }
@@ -57,11 +57,9 @@ function ProjectCard({
   const imageProps =
     mobile && project.mobileImageSrc
       ? {
-          quality: 75,
           sizes: "(max-width: 639px) calc(100vw - 3rem), 100vw",
         }
       : {
-          unoptimized: true,
           sizes: "(max-width: 1280px) 92vw, 1024px",
         };
   const imageClassName = "object-contain";
